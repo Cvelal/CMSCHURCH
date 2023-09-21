@@ -8,7 +8,7 @@
 
 ## Clone project
 ```bash
-git clone https://github.com/Cvelal/ProyectoSeminario.git
+git clone https://github.com/Cvelal/CMSCHURCH.git
 ```
 ## Install Composer Dependencies
 ```bash
