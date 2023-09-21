@@ -1,5 +1,5 @@
 <script>
-<?php $months =  ['Ene', 'Feb', 'Mar','Abr','May','Jun','Jul','Aug','Sept','Oct','Now','Dic']; ?>
+<?php $months =  ['Ene', 'Feb', 'Mar','Abr','May','Jun','Jul','Aug','Sept','Oct','Nov','Dic']; ?>
 // MORRIS BAR CHART
 // =================================================================
 // Require MorrisJS Chart

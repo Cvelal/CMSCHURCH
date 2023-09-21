@@ -1,20 +1,21 @@
 
 # About Church Management System
-    Its a web application for churches that manages administrative activities in the church.
-    it manages the church's attendances, collections, members, events, announcements.
-    features also includes bulk sms, email messaging, analysis on attendance, collection, members etc
+    Es una aplicación web para iglesias que gestiona las actividades administrativas de la iglesia.
+    Gestiona las asistencias de la iglesia, colecciones, miembros, eventos, anuncios.
+    también incluye mensajería por correo electrónico, análisis de asistencia, recaudación, miembros, etc.
 
 # Installation
 
 ## Clone project
 ```bash
-git clone https://github.com/myckhel/church-management-system.git
+git clone https://github.com/Cvelal/ProyectoSeminario.git
 ```
 ## Install Composer Dependencies
 ```bash
 composer install
 ```
 ## Create Environment File
+## No realizar este paso
 ```bash
 cp .env.example .env
 ```
@@ -58,10 +59,3 @@ php artisan migrate
 ```bash
 php artisan serve
 ```
-
-## Previews
-
-![Dashboard view](https://github.com/myckhel/church-management-system/blob/master/public/img/cms.JPG)
-![Dashboard view2](https://github.com/myckhel/church-management-system/blob/master/public/img/cms2.JPG)
-![Dashboard view3](https://github.com/myckhel/church-management-system/blob/master/public/img/cms3.JPG)
-![Dashboard view4](https://github.com/myckhel/church-management-system/blob/master/public/img/cms4.JPG)
