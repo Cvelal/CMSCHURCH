@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    Attendance Report
+    Reporte de Asistencias
 @endsection
 
 @section('content')
@@ -13,7 +13,7 @@
             <!--Page Title-->
             <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
             <div id="page-title">
-                <h1 class="page-header text-overflow">Attendance Report</h1>
+                <h1 class="page-header text-overflow">Reporte de Asistencia</h1>
             </div>
             <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
             <!--End page title-->
@@ -27,9 +27,9 @@
                     </a>
                 </li>
                 <li>
-                    <a href="{{ route('attendance') }}">Reports</a>
+                    <a href="{{ route('attendance') }}">Reportes</a>
                 </li>
-                <li class="active">Attendance</li>
+                <li class="active">Asistencia</li>
             </ol>
             <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
             <!--End breadcrumb-->
@@ -56,23 +56,23 @@
                 <div class="col-md-8 col-md-offset-2" style="margin-bottom:20px">
                     <div class="panel" style="background-color: #e8ddd3;">
                         <div class="panel-heading">
-                            <h3 class="panel-title"><strong>All Branches Attendance <i>Report</i></strong></h3>
+                            <h3 class="panel-title"><strong>Asistencia en todos los Ministerios <i>Reporte</i></strong></h3>
                         </div>
                         <div class="panel-body">
                             <table class="table text-center">
                                 <thead class="bg-warning text-center">
                                     <tr>
-                                        <th colspan="3" class="bg-light text-center">Total Number of Attendance </th>
+                                        <th colspan="3" class="bg-light text-center">Numero Total de Asistencias </th>
                                     </tr>
                                     <tr>
                                         <th>
 
                                         </th>
                                         <th class="text-center">
-                                            Till Date
+                                            Hasta la Fecha
                                         </th>
                                         <th class="text-center">
-                                            Today's
+                                            Hoy 
                                         </th>
                                     </tr>
                                 </thead>
@@ -99,27 +99,27 @@
                 <div class="col-md-8 col-md-offset-2" style="margin-bottom:20px">
                     <div class="panel" style="background-color: #e8ddd3;">
                         <div class="panel-heading">
-                            <h3 class="panel-title"><strong>Total Attendance By Type</strong></h3>
+                            <h3 class="panel-title"><strong>Total de Asistencia por tipo</strong></h3>
                         </div>
                         <div class="panel-body">
                             <table class="table text-center">
                                 <thead class="bg-warning text-center">
                                     <tr>
                                         <th class="text-center">
-                                            Type
+                                            Tipo
                                         </th>
                                         <th class="text-center">
-                                            Till Date
+                                            Hasta la Fecha
                                         </th>
                                         <th class="text-center">
-                                            Today's
+                                            Hoy
                                         </th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
                                         <th>
-                                            Male
+                                            Hombres
                                         </th>
                                         <td>
                                             <span
@@ -132,7 +132,7 @@
                                     </tr>
                                     <tr>
                                         <th>
-                                            Female
+                                            Mujeres
                                         </th>
                                         <td>
                                             <span
@@ -145,7 +145,7 @@
                                     </tr>
                                     <tr>
                                         <th>
-                                            Children
+                                            Niños
                                         </th>
                                         <td>
                                             <span
@@ -180,20 +180,20 @@
                 <div class="col-md-8 col-md-offset-2" style="margin-bottom:20px">
                     <div class="panel" style="background-color: #e8ddd3;">
                         <div class="panel-heading">
-                            <h3 class="panel-title"><strong>All branches Total Attendance</strong></h3>
+                            <h3 class="panel-title"><strong>Asistencia Total de todos los Ministerios</strong></h3>
                         </div>
                         <div class="panel-body">
                             <table class="table text-center">
                                 <thead class="bg-warning text-center">
                                     <tr>
                                         <th class="text-center">
-                                            Branch Name
+                                            Nombre del Ministerio
                                         </th>
                                         <th class="text-center">
-                                            Till Date
+                                            Hasta ahora
                                         </th>
                                         <th class="text-center">
-                                            Today's
+                                            Hoy
                                         </th>
                                     </tr>
                                 </thead>
@@ -239,7 +239,7 @@
 
                 <?php
                 $years = [];
-                $i = 9;
+                $i = 2;
                 while ($i >= 0) {
                     $years[$i] = date('Y', strtotime("-$i year")); //1 week ago
                     $i--;
@@ -249,14 +249,14 @@
                 <div class="col-md-12 col-md-offset-0" style="margin-bottom:20px">
                     <div class="panel" style="background-color: #e8ddd3;  overflow:scroll">
                         <div class="panel-heading">
-                            <h3 class="panel-title"><strong>Last 10 Years Attendance</strong></h3>
+                            <h3 class="panel-title"><strong>Asistencia los ultimos 3 años</strong></h3>
                         </div>
                         <div class="panel-body">
                             <table class="table" id="demo-dt-basic" class="table table-striped table-bordered datatable"
                                 cellspacing="0" width="100%">
                                 <thead class="bg-dark text-white">
                                     <tr>
-                                        <th>Type</th>
+                                        <th>Tipo</th>
                                         <?php $totalss = [];
                         $totals = []; $type = ['male', 'female', 'children'];
                         foreach ($type as $key => $value) {

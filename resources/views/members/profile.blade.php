@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    Member Profile
+    Perfil del miembro
 @endsection
 
 @section('link')
@@ -22,30 +22,30 @@
     <?php
     $colors = colo(); //$generateColor($c_types);
     ?>
-    <!--CONTENT CONTAINER-->
+    <!--Contenedor del contenido-->
     <!--===================================================-->
     <div id="content-container">
         <div id="page-head">
 
-            <!--Page Title-->
+            <!--Titulo de la pagina-->
             <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
             <div id="page-title">
-                <h1 class="page-header text-overflow">Member</h1>
+                <h1 class="page-header text-overflow">Miembro</h1>
             </div>
             <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-            <!--End page title-->
+            <!--Fin del titulo-->
 
 
             <!--Breadcrumb-->
             <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
             <ol class="breadcrumb">
                 <li>
-                    <i class="fa fa-home"></i><a href="{{ route('dashboard') }}"> Dashboard</a>
+                    <i class="fa fa-home"></i><a href="{{ route('dashboard') }}"> Tablero</a>
                 </li>
                 <li>
-                    <i class="fa fa-users"></i><a href="{{ route('members.all') }}"> Members</a>
+                    <i class="fa fa-users"></i><a href="{{ route('members.all') }}"> Miembros</a>
                 </li>
-                <li class="active">Profile</li>
+                <li class="active">Perfil</li>
             </ol>
             <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
             <!--End breadcrumb-->
@@ -53,7 +53,7 @@
         </div>
 
 
-        <!--Page content-->
+        <!--Contenido de la pagina-->
         <!--===================================================-->
         <div id="page-content">
             <div class="col-md-12 col-md-offset-0 col-lg-12 col-lg-offset-0">
@@ -64,7 +64,7 @@
                                 <div class="text-center">
                                     <div class="pad-ver">
                                         <img src="{{ url('images/') }}/{{ $member->photo }}" class="img-lg img-circle"
-                                            alt="Profile Picture">
+                                            alt="Foto de Perfil">
                                     </div>
                                     <h4 class="text-lg text-overflow mar-no">{{ $member->title }}.
                                         {{ $member->getFullname() }}</h4>
@@ -80,34 +80,34 @@
                                         <a href="app-profile.html#" class="btn btn-icon fa fa-instagram icon-lg add-tooltip"
                                             data-original-title="Instagram" data-container="body"></a>
                                     </div>
-                                    <a href="tel:{{ $member->phone }}" class="btn  btn-success btn-md">Call</a>
+                                    <a href="tel:{{ $member->phone }}" class="btn  btn-success btn-md">Llamar</a>
                                     <a href="{{ route('email') }}?mail={{ $member->email }}"
-                                        class="btn  btn-primary btn-md">Email</a>
+                                        class="btn  btn-primary btn-md">Correo</a>
                                 </div>
                                 <br><br>
                                 <div class="col-md-12">
                                     <div class="text-center">
-                                        <p class=" text-center text-sm text-uppercase text-bold">Details</p>
+                                        <p class=" text-center text-sm text-uppercase text-bold">Detalle</p>
                                         <hr>
-                                        <p class="text-align-right">Address: <i
+                                        <p class="text-align-right">Direccion: <i
                                                 class="fa fa-map-marker icon-lg icon-fw"></i>{{ $member->address }}</p>
-                                        <p>Email: <a href="app-profile.html#" class="btn-link">
+                                        <p>Correo: <a href="app-profile.html#" class="btn-link">
                                                 <i class="fa fa-inbox icon-lg icon-fw"></i>{{ $member->email }}</a>
                                         </p>
-                                        <p>Phone: <i class="fa fa-phone icon-lg icon-fw"></i>{{ $member->phone }}</p>
-                                        <p>City: <i class="fa fa-home icon-lg icon-fw"></i>{{ $member->city }}</p>
-                                        <p>State: <i class="fa fa-home icon-lg icon-fw"></i>{{ $member->state }}</p>
-                                        <p>Country: <i class="fa fa-home icon-lg icon-fw"></i>{{ $member->country }}</p>
+                                        <p>Telefono: <i class="fa fa-phone icon-lg icon-fw"></i>{{ $member->phone }}</p>
+                                        <p>Ciudad: <i class="fa fa-home icon-lg icon-fw"></i>{{ $member->city }}</p>
+                                        <p>Estado: <i class="fa fa-home icon-lg icon-fw"></i>{{ $member->state }}</p>
+                                        <p>Pais: <i class="fa fa-home icon-lg icon-fw"></i>{{ $member->country }}</p>
                                         <p class="text-sm text-center"></p>
                                     </div>
                                     <hr>
                                     <div class="col-md-6 col-md-offset-2">
-                                        <p class="pad-ver text-main text-sm text-capitalize text-bold">Position: <span
+                                        <p class="pad-ver text-main text-sm text-capitalize text-bold">Posicion: <span
                                                 class="pull-right">{{ $member->position }}</span></p>
 
-                                        <p class="pad-ver text-main text-sm text-capitalize text-bold">Relatives:
+                                        <p class="pad-ver text-main text-sm text-capitalize text-bold">Parientes:
                                             <span class="pull-right">
-                                                <?php if (!empty($member->relative) || strlen($member->relative)>0){ // do this only if there are relatives assigned to the member?>
+                                                <?php if (!empty($member->relative) || strlen($member->relative)>0){?>
                                                 <?php $relatives = json_decode($member->relative); ?>
                                                 <?php
                             foreach ($relatives as $relative){
@@ -119,7 +119,7 @@
                                                 <?php
                               }
                               }
-                            } else {echo 'No Relatives<br/>';}
+                            } else {echo 'No tiene parientes<br/>';}
                           ?>
                                             </span>
                                         </p>
@@ -132,8 +132,7 @@
                                         <div class="panel rounded-top">
                                             <div class="panel-heading bg-dark">
                                                 <div class="co" style="padding-top:7px;">
-                                                    <h2 class="text-center text-white" style="color:white;">Attendance
-                                                        Analysis - {{ date('Y') }}</h2>
+                                                    <h2 class="text-center text-white" style="color:white;">Analisis de la asistencia - {{ date('Y') }}</h2>
                                                 </div>
                                             </div>
                                         </div>
@@ -159,7 +158,7 @@
                                             <div class="panel-heading bg-dark">
                                                 <div id="" class="col-xs-12 text-center" style="padding-top:7px;">
                                                     <h2 class="text-center text-white">
-                                                        <p style="color:white;">Collection Analysis </p>
+                                                        <p style="color:white;">Recopilacion del analisis</p>
                                                     </h2>
                                                 </div>
                                             </div>
@@ -167,27 +166,26 @@
                                                 style="overflow: scroll">
                                                 <div class="row">
                                                     <div class="col-xs-6">
-                                                        <label for="group" class="">Group By</label>
+                                                        <label for="group" class="">Agrupar por</label>
                                                         <select id="group" required style="outline:none;"
                                                             name="sort" class="selectpicker col-md-12"
                                                             data-style="btn-primary">
-                                                            <option value="1">Days</option>
-                                                            <option value="2">Weeks</option>
-                                                            <option selected value="3">Months</option>
-                                                            <option value="4">Years</option>
+                                                            <option value="1">Dias</option>
+                                                            <option value="2">Semana</option>
+                                                            <option selected value="3">Meses</option>
+                                                            <option value="4">Años</option>
                                                         </select>
                                                     </div>
                                                     <div class="col-xs-6">
-                                                        <label for="range" class="">Select Range</label>
+                                                        <label for="range" class="">Seleccionar Rango</label>
                                                         <select id="m-i" required style="outline:none;"
                                                             name="range"
                                                             class="selectpicker col-md-12 nav nav-pills ranges"
                                                             data-style="btn-primary">
-                                                            <option selected disabled value="">Choose Number of
-                                                                Months</option>
+                                                            <option selected disabled value="">Escoger numero de meses</option>
                                                             @for ($i = 1; $i < 13; $i++)
                                                                 <option value="{{ $i }}">
-                                                                    Last{{ $i }} Months</option>
+                                                                    Ultimos {{ $i }} Meses</option>
                                                             @endfor
                                                         </select>
                                                     </div>
@@ -207,16 +205,15 @@
         </div>
     </div>
     <!--===================================================-->
-    <!--End page content-->
+    <!--Fin del contenido-->
 
     <!--===================================================-->
-    <!--END CONTENT CONTAINER-->
+    <!--Fin del contenedor de contenido-->
 @endsection
 
 @section('js')
     <script src="{{ URL::asset('plugins/bootstrap-select/bootstrap-select.min.js') }}"></script>
     <script src="{{ URL::asset('js/canvasjs.min.js') }}"></script>
-    <!--Morris.js [ OPTIONAL ]-->
     <script src="{{ URL::asset('plugins/morris-js/morris.min.js') }}"></script>
     <script src="{{ URL::asset('plugins/morris-js/raphael-js/raphael.min.js') }}"></script>
     <script>
@@ -224,14 +221,14 @@
             $('ul.ranges a').click(function(e) {
                 e.preventDefault();
 
-                // Get the number of days from the data attribute
+                // Obtener el numero de dias desde el atributo de dato
                 var el = $(this);
-                // remove classes from all
+                // Remover las clases de todo
                 $('ul li').not(this).removeClass('active');
                 $(el).parent().toggleClass('active');
                 days = el.attr('data-range');
 
-                // Request the data and render the chart using our handy function
+                // Solicite los datos y renderice el gráfico utilizando nuestra práctica función
                 requestData(days, chart, group);
             })
 
@@ -243,15 +240,13 @@
             $('#group').change((e) => {
                 let value = e.target.value;
                 switchSelect(value)
-                // group = value
-                // requestData(el.value, chart, group);
             })
 
             var chart = Morris.Bar({
-                // ID of the element in which to draw the chart.
+                // ID del elemento en el que dibujar el gráfico.
                 element: 'member-analysis',
-                data: [0, 0], // Set initial data (ideally you would provide an array of default data)
-                xkey: 'y', // Set the key for X-axis
+                data: [0, 0], 
+                xkey: 'y', 
                 ykeys: [<?php yKeys2($c_types); ?>],
                 labels: [<?php labels($c_types); ?>],
                 hideHover: 'auto',
@@ -259,17 +254,17 @@
                 barColors: [<?php barColors($colors); ?>],
             });
 
-            // Request initial data for the past 7 days:
+            // Solicitar datos iniciales de los últimos 7 días:
             requestData(8, chart, group);
 
         })
 
-        // Create a function that will handle AJAX requests
+        // Cree una función que maneje las solicitudes AJAX
         function requestData(days, chart, group) {
             $.ajax({
                     type: "GET",
                     dataType: 'json',
-                    url: "{{ route('member.analysis') }}", // This is the URL to the API
+                    url: "{{ route('member.analysis') }}", // URL de la API
                     data: {
                         interval: days,
                         group,
@@ -277,7 +272,7 @@
                     }
                 })
                 .done(function(data) {
-                    // When the response to the AJAX request comes back render the chart with new data
+                    // Cuando llegue la respuesta a la solicitud AJAX, renderice el gráfico con nuevos datos.
                     $('#manual-analysis-hd').html(manual_analysis_hd({
                         group,
                         interval: days,
@@ -287,45 +282,45 @@
                     chart.setData(data);
                 })
                 .fail(function() {
-                    // If there is no communication between the server, show an error
-                    alert("error occured");
+                    // Si no hay comunicación entre el servidor muestra un error.
+                    alert("Ocurrio un error");
                 });
         }
 
-        var group = 'month';
+        var group = 'mese';
         var switchSelect = (to) => {
             let rangeMin = 1;
             let rangeMax = 7
             if (to == 1) {
-                group = 'day';
+                group = 'dia';
                 rangeMin = 1;
                 rangeMax = 7
             }
             if (to == 3) {
-                group = 'month';
+                group = 'mese';
                 rangeMin = 1;
                 rangeMax = 12
             }
             if (to == 2) {
-                group = 'week';
+                group = 'semana';
                 rangeMin = 10;
                 rangeMax = 30
             }
             if (to == 4) {
-                group = 'year';
+                group = 'año';
                 rangeMin = 1;
                 rangeMax = 10
             }
             $('#m-i').html($('<option>', {
                 value: 0,
-                text: 'Choose range',
+                text: 'Seleccione el rango',
                 selected: 'selected',
                 disabled: true,
             }, '</option>'))
             for (let i = rangeMin; i < rangeMax + rangeMin; i = i + rangeMin) {
                 $('#m-i').append($('<option>', {
                     value: i,
-                    text: `Last ${i} ${group}s`,
+                    text: `Ultimos  ${i} ${group}s`,
                 }, '</option>'));
                 $('#m-i').selectpicker('refresh');
             }
@@ -351,7 +346,7 @@
   <div id="manual-analysis-hd" class="panel-heading bg-primary">
     <div class="col-xs-12 text-center">
       <div class="col-xs-12 panel-title">
-        <div  id="specifier" class="col-xs-2 small adaptive-color" style="">Within Last ${data.interval} ${data.group}s  </div>
+        <div  id="specifier" class="col-xs-2 small adaptive-color" style="">Con los ultimos ${data.interval} ${data.group}s  </div>
         ${middle}
         <div  id="total" class="col-xs-2 small adaptive-color" style="">Total: ${total}</div>
       </div>
@@ -365,7 +360,7 @@
             animationEnabled: true,
             exportEnabled: true,
             title: {
-                text: "Overall Attendance Rating"
+                text: "Calificación general de asistencia"
             },
             subtitles: [{
                 text: ""

@@ -48,7 +48,7 @@
                                         class="form-control" value="" style="margin-bottom:15px" required>
                                     <input type="text" id="event_title" placeholder="Por:" name="by_who"
                                         class="form-control" value="" required><br />
-                                    <center><label>assign to</label></center>
+                                    <center><label>Asignado para:</label></center>
                                     <select id="num-selector" data-live-search="true" name="assign[]" data-width="100%"
                                         data-actions-box="true" class="selectpicker" multiple>
                                         @foreach ($pastors as $pastor)
@@ -206,8 +206,8 @@
 
                 <!--Modal footer-->
                 <div class="modal-footer">
-                    <button data-dismiss="modal" class="btn btn-default" type="button">Close</button>
-                    <button class="btn btn-primary">Save changes</button>
+                    <button data-dismiss="modal" class="btn btn-default" type="button">Cerrar</button>
+                    <button class="btn btn-primary">Guardar Cambios</button>
                 </div>
             </div>
         </div>

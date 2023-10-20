@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    Edit Member Profile
+    Editar el Perfil del miembro
 @endsection
 
 @section('content')
@@ -14,7 +14,7 @@
             <!--Page Title-->
             <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
             <div id="page-title">
-                <h1 class="page-header text-overflow">Edit Member Profile</h1>
+                <h1 class="page-header text-overflow">Editar Perfil de Miembro</h1>
             </div>
             <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
             <!--End page title-->
@@ -29,7 +29,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="{{ route('members.all') }}">Member</a>
+                    <a href="{{ route('members.all') }}">Miembro</a>
                 </li>
                 <li class="active">Edit</li>
             </ol>
@@ -49,7 +49,7 @@
                 <div class="col-lg-8 col-lg-offset-2">
                     <div class="panel">
                         <div class="panel-heading">
-                            <h1 class="text-center" style="padding-top:5px">Register Member</h2>
+                            <h1 class="text-center" style="padding-top:5px">Registrar miembro</h2>
                         </div>
                         <div class="col-lg-10 col-lg-offset-2">
                             @if (session('status'))
@@ -97,8 +97,7 @@
                                     <div class="col-md-6">
                                         <!--Static-->
                                         <div class="form-group">
-                                            <label class="col-md-3 control-label" for="demo-readonly-input">Branch
-                                                Code</label>
+                                            <label class="col-md-3 control-label" for="demo-readonly-input">Codigo del Ministerio</label>
                                             <div class="col-md-9">
                                                 <input type="text" id="demo-readonly-input"
                                                     value="{{ \Auth::user()->branchcode }}" class="form-control"
@@ -118,40 +117,33 @@
                                                     <option value="Mrs">Mrs</option>
                                                     <option value="Miss">Miss</option>
                                                     <option value="Dr">Dr</option>
-                                                    <option value="Dr (Mrs)">Dr (Mrs)</option>
-                                                    <option value="Chief">Chief</option>
-                                                    <option value="Chief (Mrs)">Chief (Mrs)</option>
-                                                    <option value="Engr">Engr</option>
-                                                    <option value="Elder">Elder</option>
-                                                    <option value="Surveyor"> Surveyor</option>
-                                                    <option value="Oba">Oba</option>
-                                                    <option value="Olori">Olori</option>
+                                                    <option value="Ing">Ingeniero</option>
+                                                    <option value="Anciano">Anciano</option>
                                                 </select>
                                             </div>
                                         </div>
 
                                         <!--Text Input-->
                                         <div class="form-group">
-                                            <label class="col-md-3 control-label" for="demo-text-input">Firstname</label>
+                                            <label class="col-md-3 control-label" for="demo-text-input">Nombres</label>
                                             <div class="col-md-9">
                                                 <input type="text" id="demo-text-input" name="firstname"
                                                     value="{{ old('firstname') or $fname }}" class="form-control"
-                                                    placeholder="Firstname" required>
+                                                    placeholder="Nombres" required>
 
                                             </div>
                                         </div>
                                         <!--Text Input-->
                                         <div class="form-group">
-                                            <label class="col-md-3 control-label" for="demo-text-input">Lastname</label>
+                                            <label class="col-md-3 control-label" for="demo-text-input">Apellidos</label>
                                             <div class="col-md-9">
                                                 <input type="text" id="demo-text-input" value="{{ $lname }}"
-                                                    name="lastname" class="form-control" placeholder="Lastname" required>
+                                                    name="lastname" class="form-control" placeholder="Apellidos" required>
 
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label class="col-md-3 control-label" for="demo-text-input">Date Of
-                                                Birth</label>
+                                            <label class="col-md-3 control-label" for="demo-text-input">Fecha de Cumpleaños</label>
                                             <div class="col-md-9">
                                                 <input type="text" placeholder="Date of Birth"
                                                     value="{{ $dob }}" name="dob"
@@ -164,25 +156,24 @@
 
                                         <!--Email Input-->
                                         <div class="form-group">
-                                            <label class="col-md-3 control-label" for="demo-email-input">Email</label>
+                                            <label class="col-md-3 control-label" for="demo-email-input">Correo</label>
                                             <div class="col-md-9">
                                                 <input type="email" id="demo-email-input" value="{{ $email }}"
-                                                    class="form-control" name="email" placeholder="Enter your email"
+                                                    class="form-control" name="email" placeholder="Ingrese su correo"
                                                     required>
-                                                <small class="help-block">Please enter your email</small>
+                                                <small class="help-block">Por favor ingrese el correo</small>
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label class="col-md-3 control-label" for="demo-email-input">Phone
-                                                Number</label>
+                                            <label class="col-md-3 control-label" for="demo-email-input">Numero de Telefono</label>
                                             <div class="col-md-9">
                                                 <input type="number" class="form-control" value="{{ $phone }}"
-                                                    name="phone" placeholder="Enter your phone number" required>
+                                                    name="phone" placeholder="Ingrese numero de telefono" required>
                                             </div>
                                         </div>
                                         <!--Text Input-->
                                         <div class="form-group">
-                                            <label class="col-md-3 control-label" for="demo-text-input">Occupation</label>
+                                            <label class="col-md-3 control-label" for="demo-text-input">Ocupación</label>
                                             <div class="col-md-9">
                                                 <select name="occupation"
                                                     class="selectpicker col-xs-6 col-sm-4 col-md-6 col-lg-4"
@@ -190,19 +181,15 @@
                                                     <option selected value="{{ $occupation }}">{{ $occupation }}
                                                     </option>
                                                     <option value="Doctor">Doctor</option>
-                                                    <option value="Engineer">Engineer</option>
-                                                    <option value="Surveyor">Surveyor</option>
-                                                    <option value="Business Person">Business Person</option>
-                                                    <option value="Lecturer">Lecturer</option>
-                                                    <option value="Professor">Professor</option>
-                                                    <option value="Pharmacist">Pharmacist</option>
-                                                    <option value="Civil Servant">Civil Servant</option>
-                                                    <option value="Retired">*Retired</option>
+                                                    <option value="Engineer">Ingeniero</option>
+                                                    <option value="Business Person">Empresario</option>
+                                                    <option value="Professor">Profesor</option>
+                                                    <option value="Retired">Jubilado</option>
                                                 </select>
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label class="col-md-3 control-label" for="demo-text-input">Position</label>
+                                            <label class="col-md-3 control-label" for="demo-text-input">Posición</label>
                                             <div class="col-md-9">
                                                 <select name="position"
                                                     class="selectpicker col-xs-6 col-sm-4 col-md-6 col-lg-4"
@@ -211,19 +198,14 @@
                                                         {{ $position }}</option>
                                                     <option value="senior pastor">Senior Pastor</option>
                                                     <option value="pastor">Pastor</option>
-                                                    <option value="member">Member</option>
-                                                    <option value="usher">Usher</option>
-                                                    <option value="worker">Worker</option>
-                                                    <option value="chorister">Chorister</option>
-                                                    <option value="elder">Elder</option>
-                                                    <option value="technician">Technician</option>
-                                                    <option value="instrumentalist">Instrumentalist</option>
-                                                    <option value="deacon">Deacon</option>
-                                                    <option value="deaconess">Deaconess</option>
-                                                    <option value="evangelist">Evangelist</option>
-                                                    <option value="minister">Minister</option>
-                                                    <option value="protocol">Protocol</option>
-                                                    <option value="hod">HOD</option>
+                                                    <option value="member">Miembro</option>
+                                                    <option value="worker">Obrero</option>
+                                                    <option value="chorister">Corista</option>
+                                                    <option value="elder">Anciano</option>
+                                                    <option value="technician">Tecnico</option>
+                                                    <option value="instrumentalist">Instrumentista</option>
+                                                    <option value="evangelist">Evangelista</option>
+                                                    <option value="minister">Ministro</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -231,19 +213,19 @@
 
                                         <!--Textarea-->
                                         <div class="form-group">
-                                            <label class="col-md-3 control-label" for="demo-textarea-input">Address
+                                            <label class="col-md-3 control-label" for="demo-textarea-input">Dirección
                                                 I</label>
                                             <div class="col-md-9">
                                                 <textarea id="demo-textarea-input" name="address" value="{{ $address }}" rows="5" class="form-control"
-                                                    placeholder="Address I" required></textarea>
+                                                    placeholder="Dirección I" required></textarea>
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label class="col-md-3 control-label" for="demo-textarea-input">Address
+                                            <label class="col-md-3 control-label" for="demo-textarea-input">Dirección
                                                 II</label>
                                             <div class="col-md-9">
                                                 <textarea id="demo-textarea-input" name="address2" value="{{ $address2 }}" rows="5" class="form-control"
-                                                    placeholder="Address II"></textarea>
+                                                    placeholder="Dirección II"></textarea>
                                             </div>
                                         </div>
                                     </div>
@@ -252,31 +234,31 @@
                                             <label class="col-md-3 control-label" for="demo-textarea-input">Postal</label>
                                             <div class="col-md-9">
                                                 <input type="text" class="form-control" value="{{ $postal }}"
-                                                    name="postal" placeholder="Enter memeber Postal/ZIP Code" required>
+                                                    name="postal" placeholder="Ingrese el codigo postal" required>
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label class="col-md-3 control-label" for="demo-textarea-input">City</label>
+                                            <label class="col-md-3 control-label" for="demo-textarea-input">Ciudad</label>
                                             <div class="col-md-9">
                                                 <input type="text" class="form-control" name="city"
-                                                    value="{{ $city }}" placeholder="Enter memeber city"
+                                                    value="{{ $city }}" placeholder="Ingrese la ciudad del miembro"
                                                     required>
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label class="col-md-3 control-label" for="demo-textarea-input">State</label>
+                                            <label class="col-md-3 control-label" for="demo-textarea-input">Estado</label>
                                             <div class="col-md-9">
                                                 <input type="text" class="form-control" value="{{ $state }}"
-                                                    name="state" placeholder="Enter memeber state" required>
+                                                    name="state" placeholder="Ingrese el estado del miembro" required>
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label class="col-md-3 control-label"
-                                                for="demo-textarea-input">Country</label>
+                                                for="demo-textarea-input">Pais</label>
                                             <div class="col-md-9">
                                                 <!--input type="text" class="form-control" name="country" placeholder="Enter member country" required-->
                                                 <select class="form-control" name="country" required
-                                                    placeholder="Enter member country">
+                                                    placeholder="Ingrese el pais del miembro">
                                                     <option selected value="{{ $country }}">{{ $country }}
                                                     </option>
                                                     <option value="Nigeria">Nigeria</option>
@@ -323,19 +305,16 @@
                                                     <option value="Canada">Canada</option>
                                                     <option value="Cape Verde">Cape Verde</option>
                                                     <option value="Cayman Islands">Cayman Islands</option>
-                                                    <option value="Central African Republic">Central African Republic
-                                                    </option>
+                                                    <option value="Central African Republic">Central African Republic</option>
                                                     <option value="Chad">Chad</option>
                                                     <option value="Chile">Chile</option>
                                                     <option value="China">China</option>
                                                     <option value="Christmas Island">Christmas Island</option>
-                                                    <option value="Cocos (Keeling) Islands">Cocos (Keeling) Islands
-                                                    </option>
+                                                    <option value="Cocos (Keeling) Islands">Cocos (Keeling) Islands</option>
                                                     <option value="Colombia">Colombia</option>
                                                     <option value="Comoros">Comoros</option>
                                                     <option value="Congo">Congo</option>
-                                                    <option value="Congo, The Democratic Republic of The">Congo, The
-                                                        Democratic Republic of The</option>
+                                                    <option value="Congo, The Democratic Republic of The">Congo, The Democratic Republic of The</option>
                                                     <option value="Cook Islands">Cook Islands</option>
                                                     <option value="Costa Rica">Costa Rica</option>
                                                     <option value="Cote D'ivoire">Cote D'ivoire</option>
@@ -354,16 +333,14 @@
                                                     <option value="Eritrea">Eritrea</option>
                                                     <option value="Estonia">Estonia</option>
                                                     <option value="Ethiopia">Ethiopia</option>
-                                                    <option value="Falkland Islands (Malvinas)">Falkland Islands (Malvinas)
-                                                    </option>
+                                                    <option value="Falkland Islands (Malvinas)">Falkland Islands (Malvinas)</option>
                                                     <option value="Faroe Islands">Faroe Islands</option>
                                                     <option value="Fiji">Fiji</option>
                                                     <option value="Finland">Finland</option>
                                                     <option value="France">France</option>
                                                     <option value="French Guiana">French Guiana</option>
                                                     <option value="French Polynesia">French Polynesia</option>
-                                                    <option value="French Southern Territories">French Southern Territories
-                                                    </option>
+                                                    <option value="French Southern Territories">French Southern Territories</option>
                                                     <option value="Gabon">Gabon</option>
                                                     <option value="Gambia">Gambia</option>
                                                     <option value="Georgia">Georgia</option>
@@ -380,18 +357,15 @@
                                                     <option value="Guinea-bissau">Guinea-bissau</option>
                                                     <option value="Guyana">Guyana</option>
                                                     <option value="Haiti">Haiti</option>
-                                                    <option value="Heard Island and Mcdonald Islands">Heard Island and
-                                                        Mcdonald Islands</option>
-                                                    <option value="Holy See (Vatican City State)">Holy See (Vatican City
-                                                        State)</option>
+                                                    <option value="Heard Island and Mcdonald Islands">Heard Island and Mcdonald Islands</option>
+                                                    <option value="Holy See (Vatican City State)">Holy See (Vatican City State)</option>
                                                     <option value="Honduras">Honduras</option>
                                                     <option value="Hong Kong">Hong Kong</option>
                                                     <option value="Hungary">Hungary</option>
                                                     <option value="Iceland">Iceland</option>
                                                     <option value="India">India</option>
                                                     <option value="Indonesia">Indonesia</option>
-                                                    <option value="Iran, Islamic Republic of">Iran, Islamic Republic of
-                                                    </option>
+                                                    <option value="Iran, Islamic Republic of">Iran, Islamic Republic of</option>
                                                     <option value="Iraq">Iraq</option>
                                                     <option value="Ireland">Ireland</option>
                                                     <option value="Israel">Israel</option>
@@ -549,7 +523,7 @@
                                         </div>
 
                                         <div class="form-group pad-ve">
-                                            <label class="col-md-3 control-label">Sex</label>
+                                            <label class="col-md-3 control-label">Sexo</label>
                                             <div class="col-md-9">
 
                                                 <!-- Radio Buttons -->
@@ -559,12 +533,12 @@
                                                         type="radio" name="sex" <?php if ($sex == 'male') {
                                                             echo 'checked';
                                                         } ?>>
-                                                    <label for="demo-form-radio">Male</label>
+                                                    <label for="demo-form-radio">Masculino</label>
                                                     <input id="demo-form-radio-2" class="magic-radio" value="female"
                                                         type="radio" name="sex" <?php if ($sex == 'female') {
                                                             echo 'checked';
                                                         } ?>>
-                                                    <label for="demo-form-radio-2">Female</label>
+                                                    <label for="demo-form-radio-2">Femenino</label>
 
                                                 </div>
 
@@ -573,7 +547,7 @@
                                             </div>
                                         </div>
                                         <div class="form-group pad-ver">
-                                            <label class="col-md-3 control-label">Marital Status</label>
+                                            <label class="col-md-3 control-label">Estado Marital</label>
                                             <div class="col-md-9">
                                                 <div class="radio">
 
@@ -583,40 +557,38 @@
                                                         type="radio" name="marital_status" <?php if ($mstatus == 'single') {
                                                             echo 'checked';
                                                         } ?>>
-                                                    <label for="demo-inline-form-radio">Single</label>
+                                                    <label for="demo-inline-form-radio">Soltero</label>
 
                                                     <input id="demo-inline-form-radio-2" class="magic-radio"
                                                         value="married" type="radio" name="marital_status"
                                                         <?php if ($mstatus == 'married') {
                                                             echo 'checked';
                                                         } ?>>
-                                                    <label for="demo-inline-form-radio-2">Married</label>
+                                                    <label for="demo-inline-form-radio-2">Casado</label>
 
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label class="col-md-3 control-label" for="demo-text-input">Member
-                                                Since</label>
+                                            <label class="col-md-3 control-label" for="demo-text-input">Miembro desde:</label>
                                             <div class="col-md-9">
-                                                <input type="text" placeholder="Member Since" name="member_since"
+                                                <input type="text" placeholder="Miembro desde:" name="member_since"
                                                     value="{{ $member_since }}" class="datepicker form-control"
                                                     required />
 
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label class="col-md-3 control-label" for="demo-text-input">Wedding
-                                                Aniversary</label>
+                                            <label class="col-md-3 control-label" for="demo-text-input">Aniversario de Boda</label>
                                             <div class="col-md-9">
-                                                <input type="text" placeholder="Wedding Anniversary"
+                                                <input type="text" placeholder="Aniversario de boda"
                                                     name="wedding_anniversary" value="{{ $wedding_anniversary }}"
                                                     class="datepicker form-control" required />
 
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label class="col-md-3 control-label">Photo</label>
+                                            <label class="col-md-3 control-label">Foto</label>
                                             <div class="col-md-9">
                                                 <span class="pull-left btn btn-primary btn-file">
                                                     Select...
@@ -625,18 +597,17 @@
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label class="col-md-3 control-label">Relative</label>
+                                            <label class="col-md-3 control-label">Pariente</label>
                                             <div class="col-md-9">
                                                 <button type="button" data-target="#demo-default-modal"
                                                     id="open-modal-btn" data-toggle="modal"
                                                     class="btn btn-primary btn-lg" style="display:none;">Launch demo
                                                     modal</button>
-                                                <button id="add-relative-btn" class="btn btn-info"type="button">Add
-                                                    Relative</button>
+                                                <button id="add-relative-btn" class="btn btn-info"type="button">Agregar Pariente</button>
                                             </div>
                                         </div>
                                         <div class="col-md-6" style="padding: 130px 0 0 320px;">
-                                            <button class="btn btn-info pull-center" type="submit">UPDATE MEMBER</button>
+                                            <button class="btn btn-info pull-center" type="submit">ACTUALIZAR MIEMBRO</button>
                                         </div>
                                     </div>
                                 </form>
@@ -658,7 +629,7 @@
                                     <div class="modal-header">
                                         <button type="button" class="close" data-dismiss="modal"><i
                                                 class="pci-cross pci-circle"></i></button>
-                                        <h4 class="modal-title">Add a Relative</h4>
+                                        <h4 class="modal-title">Agregar pariente</h4>
                                     </div>
 
 
@@ -666,11 +637,10 @@
                                     <div class="modal-body">
 
                                         <div class="form-group">
-                                            <label class="col-md-2 control-label" for="demo-email-input">Search
-                                                Relative</label>
+                                            <label class="col-md-2 control-label" for="demo-email-input">Buscar Pariente</label>
                                             <div class="col-md-10">
                                                 <input type="text" id="search-relative-input" class="form-control"
-                                                    name="name" placeholder="Enter relative Name">
+                                                    name="name" placeholder="Ingrese el nombre del pariente">
                                             </div>
                                         </div>
 
@@ -681,7 +651,7 @@
                                     <div class="modal-footer">
                                         <button data-dismiss="modal" id="close-modal-btn" class="btn btn-default"
                                             type="button">Close</button>
-                                        <button class="btn btn-primary">Save changes</button>
+                                        <button class="btn btn-primary">Guardar cambios</button>
                                     </div>
                                 </div>
                             </div>

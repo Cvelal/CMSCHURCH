@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    Collections Report
+    Reporte de Recaudaciones
 @endsection
 
 @section('content')
@@ -12,7 +12,7 @@
             <!--Page Title-->
             <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
             <div id="page-title">
-                <h1 class="page-header text-overflow">Collections Report</h1>
+                <h1 class="page-header text-overflow">Reporte de Recaudaciones</h1>
             </div>
             <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
             <!--End page title-->
@@ -25,9 +25,9 @@
                     </a>
                 </li>
                 <li>
-                    <a href="{{ route('attendance') }}">Reports</a>
+                    <a href="{{ route('attendance') }}">Reportes</a>
                 </li>
-                <li class="active">Collections</li>
+                <li class="active">Recaudaciones</li>
             </ol>
             <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
             <!--End breadcrumb-->
@@ -66,30 +66,30 @@
                 <div class="col-md-8 col-md-offset-2" style="margin-bottom:20px">
                     <div class="panel" style="background-color: #e8ddd3;">
                         <div class="panel-heading">
-                            <h3 class="panel-title"><strong>{{ $name }} Collections Report</strong></h3>
+                            <h3 class="panel-title"><strong>{{ $name }} Reporte de Recaudaciones</strong></h3>
                         </div>
                         <div class="panel-body">
                             <table class="table text-center">
                                 <thead class="bg-warning text-center">
                                     <tr>
-                                        <th colspan="3" class="bg-light text-center">Total Collection Amount </th>
+                                        <th colspan="3" class="bg-light text-center">Monto total de Recaudaciones </th>
                                     </tr>
                                     <tr>
                                         <th>
 
                                         </th>
                                         <th class="text-center">
-                                            Till Date
+                                            Hasta ahora
                                         </th>
                                         <th class="text-center">
-                                            Today's
+                                            Hoy
                                         </th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
                                         <th>
-                                            Total Amount Collected
+                                            Monto total recaudado
                                         </th>
                                         <td>
                                             <span class="badge badge-primary badge-pill">{{ $currency }}
@@ -109,20 +109,20 @@
                 <div class="col-md-8 col-md-offset-2" style="margin-bottom:20px">
                     <div class="panel" style="background-color: #e8ddd3;">
                         <div class="panel-heading">
-                            <h3 class="panel-title"><strong>Total Collections By Type</strong></h3>
+                            <h3 class="panel-title"><strong>Total de recaudaciones por tipo</strong></h3>
                         </div>
                         <div class="panel-body">
                             <table class="table text-center">
                                 <thead class="bg-warning text-center">
                                     <tr>
                                         <th class="text-center">
-                                            Collection Type
+                                            Tipo de Recaudaciones
                                         </th>
                                         <th class="text-center">
-                                            Till Date
+                                            Hasta ahora
                                         </th>
                                         <th class="text-center">
-                                            Today's
+                                            Hoy
                                         </th>
                                     </tr>
                                 </thead>
@@ -165,7 +165,7 @@
                 </div>
                 <?php $years = [];
                 $CcolumnTotals = [];
-                $i = 9;
+                $i = 3;
                 while ($i >= 0) {
                     $years[$i] = date('Y', strtotime("-$i year")); //1 year ago
                     $i--;
@@ -173,14 +173,14 @@
                 <div class="col-md-12 col-md-offset-0" style="margin-bottom:20px">
                     <div class="panel" style="background-color: #e8ddd3; overflow:scroll">
                         <div class="panel-heading">
-                            <h3 class="panel-title"><strong>Last 10 <i>Years</i> Collection</strong> Report</h3>
+                            <h3 class="panel-title"><strong>Reporte de <i>Últimos 4 años</i> de Recaudaciones</strong></h3>
                         </div>
                         <div class="panel-body">
                             <table id="demo-dt-basic" class="table table-striped table-bordered datatable" cellspacing="0"
                                 width="100%">
                                 <thead class="bg-dark text-white">
                                     <tr>
-                                        <th>Type</th>
+                                        <th>Tipo</th>
                                         @foreach ($years as $key => $value)
                                             <th>{{ $value }}</th>
                                         @endforeach
@@ -228,20 +228,20 @@
                 <div class="col-md-8 col-md-offset-2" style="margin-bottom:20px">
                     <div class="panel" style="background-color: #e8ddd3;">
                         <div class="panel-heading">
-                            <h3 class="panel-title"><strong>Total Collections By Members</strong></h3>
+                            <h3 class="panel-title"><strong>Total de Recaudaciones por miembro</strong></h3>
                         </div>
                         <div class="panel-body">
                             <table class="table text-center">
                                 <thead class="bg-warning text-center">
                                     <tr>
                                         <th class="text-center">
-                                            Member Name
+                                            Nombre del Miembro
                                         </th>
                                         <th class="text-center">
-                                            Till Date
+                                            Hasta ahora
                                         </th>
                                         <th class="text-center">
-                                            Today's
+                                            Hoy
                                         </th>
                                     </tr>
                                 </thead>

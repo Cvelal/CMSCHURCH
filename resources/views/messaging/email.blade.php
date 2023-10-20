@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    Messaging - Email
+    Mensajeria
 @endsection
 
 @section('link')
@@ -22,7 +22,7 @@
             <!--Page Title-->
             <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
             <div id="page-title">
-                <h1 class="page-header text-overflow">Messaging - Email</h1>
+                <h1 class="page-header text-overflow">Email</h1>
             </div>
             <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
             <!--End page title-->
@@ -32,7 +32,7 @@
             <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
             <ol class="breadcrumb">
                 <li>
-                    <i class="fa fa-home"></i><a href="{{ route('dashboard') }}"> Dashboard</a>
+                    <i class="fa fa-home"></i><a href="{{ route('dashboard') }}"> Tablero</a>
                 </li>
                 <li class="active">Email</li>
             </ol>
@@ -93,7 +93,7 @@
                                 @csrf
                                 <div class="form-group">
 
-                                    <label class="col-lg-1 control-label text-left" for="inputEmail">To</label>
+                                    <label class="col-lg-1 control-label text-left" for="inputEmail">Para</label>
                                     <div class="col-lg-6">
                                         <?php if(isset($_GET['mail'])) { ?>
                                         <input type="email" id="inputEmail" name="to[]" value="<?php echo $_GET['mail']; ?> "
@@ -110,7 +110,7 @@
                                     <div class="col-lg-5">
                                         <div class="col-lg-9">
                                             <input id="emails" type="text"
-                                                placeholder="Type in comma seperated emails and click add"
+                                                placeholder="Escriba separando con coma los correos a los que quiere enviar el mensaje"
                                                 class="form-control" aria-label="Recipient's email"
                                                 aria-describedby="basic-addon2">
                                         </div>
@@ -118,7 +118,7 @@
                                             <div class="input-group-append">
                                                 <button id="add-num" type="button"
                                                     class="btn btn-success form-control input-group-text"
-                                                    id="basic-addon2">Add</button>
+                                                    id="basic-addon2">Agregar</button>
                                             </div>
                                         </div>
                                     </div>
@@ -138,7 +138,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="form-group">
-                                        <label class="col-lg-1 control-label text-left" for="inputSubject">Subject</label>
+                                        <label class="col-lg-1 control-label text-left" for="inputSubject">De</label>
                                         <div class="col-lg-6">
                                             <input type="text" id="inputSubject" name="subject" class="form-control"
                                                 required>
@@ -148,7 +148,7 @@
                                             <div class="col-lg-9">
                                                 <select id="groups-selector" data-live-search="true" data-width="100%"
                                                     data-actions-box="true" class="selectpicker" multiple>
-                                                    <option data-hidden="true" selected>Select Group to send to</option>
+                                                    <option data-hidden="true" selected>Seleccione al grupo a enviar</option>
                                                     @foreach ($groups as $group)
                                                         <option value="{{ $group->id }}">{{ ucwords($group->name) }}
                                                         </option>
@@ -163,7 +163,7 @@
                                                 <div class="input-group-append">
                                                     <button id="add-group" type="button"
                                                         class="btn btn-success form-control input-group-text"
-                                                        id="basic-addon2">Add</button>
+                                                        id="basic-addon2">Agregar</button>
                                                 </div>
                                             </div>
                                         </div>
@@ -182,7 +182,7 @@
                                         <!--Send button-->
                                         <button id="demo-mail-send-btn" type="submit" class="btn btn-primary">
                                             <!-- <button id="mail-send-btn" type="submit" class="btn btn-primary"> -->
-                                            <i class="demo-psi-mail-send icon-lg icon-fw"></i> Send Mail
+                                            <i class="demo-psi-mail-send icon-lg icon-fw"></i> Enviar Email
                                         </button>
                                     </div>
 
@@ -319,7 +319,7 @@
                                 });
                             });
                         } else {
-                            alert('Error occured Please try again');
+                            alert('Ha ocurrido un error, intentelo de nuevo');
                         }
                         //clear the selectpicker
                         $('#groups-selector').find(":selected").removeAttr("selected");

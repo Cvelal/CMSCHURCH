@@ -23,7 +23,7 @@
   <div id="manual-analysis-hd" class="panel-heading bg-primary">
     <div class="col-xs-12 text-center">
       <div class="col-xs-12 panel-title">
-        <div  id="specifier" class="col-xs-2 small adaptive-color" style="">Within Last ${data.interval} ${data.group}s  </div>
+        <div  id="specifier" class="col-xs-2 small adaptive-color" style="">Ultimos ${data.interval} ${data.group}s  </div>
         ${middle}
         <div  id="total" class="col-xs-2 small adaptive-color" style="">Total: ${numberWithCommas(total)}</div>
       </div>
@@ -60,7 +60,7 @@
         }
         $('#m-i').html($('<option>', {
             value: 0,
-            text: 'Choose range',
+            text: 'Cambiar rango',
             selected: 'selected',
             disabled: true,
         }, '</option>'))

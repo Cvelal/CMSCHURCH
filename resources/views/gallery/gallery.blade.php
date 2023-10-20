@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    Gallery
+    Galeria
 @endsection
 
 @section('content')
@@ -13,7 +13,7 @@
             <!--Page Title-->
             <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
             <div id="page-title">
-                <h1 class="page-header text-overflow">Gallery</h1>
+                <h1 class="page-header text-overflow">Galeria</h1>
             </div>
             <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
             <!--End page title-->
@@ -28,9 +28,9 @@
                     </a>
                 </li>
                 <li>
-                    <a href="{{ route('members.all') }}">Gallery</a>
+                    <a href="{{ route('members.all') }}">Galeria</a>
                 </li>
-                <li class="active">All</li>
+                <li class="active">Todo</li>
             </ol>
             <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
             <!--End breadcrumb-->
@@ -43,14 +43,14 @@
         <div id="page-content">
             <div class="panel">
                 <div class="panel-heading">
-                    <h3 class="panel-title">Upload</h3>
+                    <h3 class="panel-title">Cargar</h3>
                 </div>
                 <div class="panel-body">
                     <form id="form1" runat="server">
                         <div class="col-xs-4">
                             <div class="form-group">
                                 <input type='file' id="imgInp" class="filestyle" multiple />
-                                <img id="blah" src="#" alt="your image" />
+                                <img id="blah" src="#" alt="tu imagen" />
                             </div>
                         </div>
                     </form>
@@ -59,7 +59,7 @@
             <!--===================================================-->
             <div class="panel">
                 <div class="panel-heading">
-                    <h3 class="panel-title">Pictures</h3>
+                    <h3 class="panel-title">Imagenes</h3>
                 </div>
                 @if (session('status'))
                     <div class="col-lg-10 col-lg-offset-2">

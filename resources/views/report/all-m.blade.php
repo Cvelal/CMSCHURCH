@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    All Members report
+    Reporte de todos los Miembros
 @endsection
 
 @section('content')
@@ -13,7 +13,7 @@
             <!--Page Title-->
             <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
             <div id="page-title">
-                <h1 class="page-header text-overflow">Membership</h1>
+                <h1 class="page-header text-overflow">Afiliación</h1>
             </div>
             <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
             <!--End page title-->
@@ -28,9 +28,9 @@
                     </a>
                 </li>
                 <li>
-                    <a href="{{ route('members.all') }}">Members</a>
+                    <a href="{{ route('members.all') }}">Miembros</a>
                 </li>
-                <li class="active">Report</li>
+                <li class="active">Reporte</li>
             </ol>
             <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
             <!--End breadcrumb-->
@@ -48,7 +48,7 @@
             <!--===================================================-->
             <div class="panel" style="background-color: #e8ddd3;">
                 <div class="panel-heading">
-                    <h3 class="panel-title">List of Members In {{ \Auth::user()->branchname }}</h3>
+                    <h3 class="panel-title">Listado de miembros en {{ \Auth::user()->branchname }}</h3>
                 </div>
                 @if (session('status'))
                     <div class="col-lg-10 col-lg-offset-2">
@@ -71,23 +71,23 @@
                             <?php $count = 1; ?>
                             @foreach ($reports as $report)
                                 <li class="list-group-item d-flex justify-content-between align-items-center">
-                                    Total No Of All members
+                                    Número Total de miembros
                                     <span class="badge badge-primary badge-pill">{{ $report->total_member }}</span>
                                 </li>
                                 <li class="list-group-item d-flex justify-content-between align-items-center">
-                                    Total No Of All Male Members
+                                    Número total de Hombres
                                     <span class="badge badge-primary badge-pill">{{ $report->male }}</span>
                                 </li>
                                 <li class="list-group-item d-flex justify-content-between align-items-center">
-                                    Total No Of All Female Members
+                                    Número total de Mujeres
                                     <span class="badge badge-primary badge-pill">{{ $report->female }}</span>
                                 </li>
                                 <li class="list-group-item d-flex justify-content-between align-items-center">
-                                    Total No Of All Single Members
+                                    Número total de Personas solteras
                                     <span class="badge badge-primary badge-pill">{{ $report->single }}</span>
                                 </li>
                                 <li class="list-group-item d-flex justify-content-between align-items-center">
-                                    Total No Of All Married Members
+                                    Número total de Personas Casadas
                                     <span class="badge badge-primary badge-pill">{{ $report->married }}</span>
                                 </li>
                                 <?php $count++; ?>
@@ -102,7 +102,7 @@
 
         <?php
         $years = [];
-        $i = 9;
+        $i = 3;
         while ($i >= 0) {
             $years[$i] = date('Y', strtotime("-$i year")); //1 week ago
             $i--;
@@ -112,7 +112,7 @@
         <div class="col-md-12 col-md-offset-0" style="margin-bottom:20px">
             <div class="panel" style="background-color: #e8ddd3; overflow:scroll">
                 <div class="panel-heading">
-                    <h3 class="panel-title"><strong>Last 10 <i>Years</i> Members</strong> Registration Report</h3>
+                    <h3 class="panel-title"><strong>Reporte <i>de los Últimos</i> 4 años </strong> de Registro de miembros</h3>
                 </div>
                 <div class="panel-body">
                     <table class="table" id="demo-dt-basic" class="table table-striped table-bordered datatable"
@@ -180,15 +180,15 @@
         <div class="col-md-12 col-md-offset-0" style="margin-bottom:20px">
             <div class="panel" style="background-color: #e8ddd3; overflow:scroll">
                 <div class="panel-heading">
-                    <h3 class="panel-title"><strong>Last 10 <i>Years</i> Members</strong> Registration Report</h3>
+                    <h3 class="panel-title"><strong>Reporte <i>de los Últimos</i> 4 años </strong> de Registro de miembros</h3>
                 </div>
                 <div class="panel-body">
                     <table id="demo-dt-basic" class="table table-striped table-bordered datatable" cellspacing="0"
                         width="100%">
                         <thead class="bg-dark text-white">
                             <tr>
-                                <th>Branch</th>
-                                <th>Gender</th>
+                                <th>Ministerio</th>
+                                <th>Género</th>
                                 <?php $totalss = [[]];
                     $totals = []; $type = ['male', 'female'];
                     $i = 0;

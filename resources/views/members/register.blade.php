@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    Member Registration
+    Registro de los Miembros
 @endsection
 
 @section('link')
@@ -35,32 +35,32 @@
     <!--===================================================-->
     <div id="content-container">
         <div id="page-head">
-            <!--Page Title-->
+            <!--Titulo de la pagina-->
             <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
             <div id="page-title">
-                <h1 class="page-header text-overflow">Member Registration</h1>
+                <h1 class="page-header text-overflow">Registro del Miembro</h1>
             </div>
             <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-            <!--End page title-->
+            <!--Fin titulo de la pagina-->
             <!--Breadcrumb-->
             <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
             <ol class="breadcrumb">
                 <li>
-                    <i class="fa fa-home"></i><a href="{{ route('dashboard') }}"> Dashboard</a>
+                    <i class="fa fa-home"></i><a href="{{ route('dashboard') }}"> Tablero</a>
                 </li>
-                <li class="active">Registration</li>
+                <li class="active">Registro</li>
             </ol>
             <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
             <!--End breadcrumb-->
         </div>
-        <!--Page content-->
+        <!--Contenido de la página-->
         <!--===================================================-->
         <div id="page-content">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2">
                     <div class="panel rounded-top" style="background-color: #e8ddd3;">
                         <div class="panel-heading">
-                            <h1 class="text-center" style="padding-top:5px">Register Member</h2>
+                            <h1 class="text-center" style="padding-top:5px">Registro de Miembro</h2>
                         </div>
                         <div class="col-lg-10 col-lg-offset-2">
                             @if (session('status'))
@@ -84,17 +84,16 @@
                                     <div class="col-md-6">
                                         <!--Static-->
                                         <div class="form-group">
-                                            <label class="col-md-3 control-label" for="demo-readonly-input">Branch
-                                                Code</label>
+                                            <label class="col-md-3 control-label" for="demo-readonly-input">Codigo del Ministerio</label>
                                             <div class="col-md-9">
                                                 <input type="text" id="demo-readonly-input"
                                                     value="{{ \Auth::user()->branchcode }}" class="form-control"
-                                                    placeholder="Readonly input here..." readonly>
+                                                    placeholder="Entrada de solo lectura aquí..." readonly>
                                             </div>
                                         </div>
                                         <!--Text Input-->
                                         <div class="form-group">
-                                            <label class="col-md-3 control-label" for="demo-text-input">Title</label>
+                                            <label class="col-md-3 control-label" for="demo-text-input">Titulo</label>
                                             <div class="col-md-9">
                                                 <select name="title"
                                                     class="selectpicker col-xs-6 col-sm-4 col-md-6 col-lg-9"
@@ -103,42 +102,34 @@
                                                     <option value="Mrs">Mrs</option>
                                                     <option value="Miss">Miss</option>
                                                     <option value="Dr">Dr</option>
-                                                    <option value="Dr (Mrs)">Dr (Mrs)</option>
-                                                    <option value="Chief">Chief</option>
-                                                    <option value="Chief (Mrs)">Chief (Mrs)</option>
-                                                    <option value="Engr">Engr</option>
-                                                    <option value="Elder">Elder</option>
-                                                    <option value="Surveyor"> Surveyor</option>
-                                                    <option value="Oba">Oba</option>
-                                                    <option value="Olori">Olori</option>
+                                                    <option value="Anciano">Anciano</option>
                                                 </select>
                                             </div>
                                         </div>
 
                                         <!--Text Input-->
                                         <div class="form-group">
-                                            <label class="col-md-3 control-label" for="demo-text-input">First Name</label>
+                                            <label class="col-md-3 control-label" for="demo-text-input">Nombres</label>
                                             <div class="col-md-9">
                                                 <input type="text" id="demo-text-input" name="firstname"
                                                     value="{{ old('firstname') }}" class="form-control"
-                                                    placeholder="Firstname" required>
+                                                    placeholder="Nombres" required>
 
                                             </div>
                                         </div>
                                         <!--Text Input-->
                                         <div class="form-group">
-                                            <label class="col-md-3 control-label" for="demo-text-input">Last Name</label>
+                                            <label class="col-md-3 control-label" for="demo-text-input">Apellidos</label>
                                             <div class="col-md-9">
                                                 <input type="text" id="demo-text-input" name="lastname"
-                                                    class="form-control" placeholder="Lastname" required>
+                                                    class="form-control" placeholder="Apellidos" required>
 
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label class="col-md-3 control-label" for="demo-text-input">Date Of
-                                                Birth</label>
+                                            <label class="col-md-3 control-label" for="demo-text-input">Fecha de Cumpleaños</label>
                                             <div class="col-md-9">
-                                                <input type="text" placeholder="Date of Birth" name="dob"
+                                                <input type="text" placeholder="Fecha de cumpleaños" name="dob"
                                                     class="datepicker form-control" required />
 
                                             </div>
@@ -148,39 +139,33 @@
 
                                         <!--Email Input-->
                                         <div class="form-group">
-                                            <label class="col-md-3 control-label" for="demo-email-input">Email</label>
+                                            <label class="col-md-3 control-label" for="demo-email-input">Correo</label>
                                             <div class="col-md-9">
                                                 <input type="email" id="demo-email-input" class="form-control"
-                                                    name="email" placeholder="Enter your email" required>
+                                                    name="email" placeholder="Ingrese su correo" required>
                                                 <!--small class="help-block">Please enter your email</small-->
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label class="col-md-3 control-label" for="demo-email-input">Phone
-                                                Number</label>
+                                            <label class="col-md-3 control-label" for="demo-email-input">Numero de Telefono</label>
                                             <div class="col-md-9">
                                                 <input type="number" class="form-control" name="phone"
-                                                    placeholder="Enter your phone number" required>
+                                                    placeholder="Ingrese su numero de telefono" required>
                                             </div>
                                         </div>
                                         <!--Text Input-->
                                         <div class="form-group">
-                                            <label class="col-md-3 control-label" for="demo-text-input">Occupation</label>
+                                            <label class="col-md-3 control-label" for="demo-text-input">Profesion</label>
                                             <div class="col-md-9">
                                                 <select name="occupation"
                                                     class="selectpicker col-xs-6 col-sm-4 col-md-6 col-lg-9"
                                                     data-style="btn-success" required>
                                                     <option value="Doctor">Doctor</option>
-                                                    <option value="Engineer">Engineer</option>
-                                                    <option value="Surveyor">Surveyor</option>
-                                                    <option value="Business Person">Business Person</option>
-                                                    <option value="Lecturer">Lecturer</option>
-                                                    <option value="Professor">Professor</option>
-                                                    <option value="Pharmacist">Pharmacist</option>
-                                                    <option value="Trader">Trader</option>
-                                                    <option value="Civil Servant">Civil Servant</option>
-                                                    <option value="Retired">*Retired</option>
-                                                    <option value="Other">Other</option>
+                                                    <option value="Ingeniero">Engineer</option>
+                                                    <option value="Empresario">Business Person</option>
+                                                    <option value="Profesor">Professor</option>
+                                                    <option value="Jubilado">*Retired</option>
+                                                    <option value="Otro">Other</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -190,21 +175,17 @@
                                                 <select name="position"
                                                     class="selectpicker col-xs-6 col-sm-4 col-md-6 col-lg-9"
                                                     data-style="btn-success">
-                                                    <option value="senior pastor">Senior Pastor</option>
                                                     <option value="pastor">Pastor</option>
-                                                    <option value="member">Member</option>
-                                                    <option value="usher">Usher</option>
-                                                    <option value="worker">Worker</option>
-                                                    <option value="chorister">Chorister</option>
-                                                    <option value="elder">Elder</option>
-                                                    <option value="technician">Technician</option>
-                                                    <option value="instrumentalist">Instrumentalist</option>
-                                                    <option value="deacon">Deacon</option>
-                                                    <option value="deaconess">Deaconess</option>
-                                                    <option value="evangelist">Evangelist</option>
-                                                    <option value="minister">Minister</option>
-                                                    <option value="protocol">Protocol</option>
-                                                    <option value="hod">HOD</option>
+                                                    <option value="member">Miembro</option>
+                                                    <option value="worker">Obrero</option>
+                                                    <option value="chorister">Corista</option>
+                                                    <option value="elder">Anciano</option>
+                                                    <option value="technician">Tecnico</option>
+                                                    <option value="instrumentalist">Instrumentista</option>
+                                                    <option value="deacon">Diacono</option>
+                                                    <option value="deaconess">Diaconisa</option>
+                                                    <option value="evangelist">Evangelista</option>
+                                                    <option value="minister">Ministro</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -212,53 +193,52 @@
 
                                         <!--Textarea-->
                                         <div class="form-group">
-                                            <label class="col-md-3 control-label" for="demo-textarea-input">Address
+                                            <label class="col-md-3 control-label" for="demo-textarea-input">Direccion
                                                 I</label>
                                             <div class="col-md-9">
-                                                <textarea id="demo-textarea-input" name="address" rows="5" class="form-control" placeholder="Address I"
+                                                <textarea id="demo-textarea-input" name="address" rows="5" class="form-control" placeholder="Direccion I"
                                                     required></textarea>
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label class="col-md-3 control-label" for="demo-textarea-input">Address
+                                            <label class="col-md-3 control-label" for="demo-textarea-input">Direccion
                                                 II</label>
                                             <div class="col-md-9">
-                                                <textarea id="demo-textarea-input" name="address2" rows="5" class="form-control" placeholder="Address II"></textarea>
+                                                <textarea id="demo-textarea-input" name="address2" rows="5" class="form-control" placeholder="Direccion II"></textarea>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <?php $ipInfo = app('App\Http\Controllers\VisitorController')->ip_info(app('App\Http\Controllers\VisitorController')->getUserIP(), 'Location'); ?>
-                                        <?php if($ipInfo && $ipInfo['continent'] != 'Africa'){ ?>
+                                        <?php if($ipInfo && $ipInfo['continent'] != 'Guatemala'){ ?>
                                         <div class="form-group">
-                                            <label class="col-md-3 control-label" for="demo-textarea-input">Postal</label>
+                                            <label class="col-md-3 control-label" for="demo-textarea-input">Codigo postale</label>
                                             <div class="col-md-9">
                                                 <input type="text" class="form-control" name="postal"
-                                                    placeholder="Enter member Postal/ZIP Code">
+                                                    placeholder="Ingrese codigo postal">
                                             </div>
                                         </div>
                                         <?php } ?>
                                         <div class="form-group">
-                                            <label class="col-md-3 control-label" for="demo-textarea-input">City</label>
+                                            <label class="col-md-3 control-label" for="demo-textarea-input">Ciudad</label>
                                             <div class="col-md-9">
                                                 <input type="text" class="form-control" name="city"
-                                                    placeholder="Enter member city" required>
+                                                    placeholder="Ingrese la ciudad" required>
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label class="col-md-3 control-label" for="demo-textarea-input">State</label>
+                                            <label class="col-md-3 control-label" for="demo-textarea-input">Estado</label>
                                             <div class="col-md-9">
                                                 <input type="text" class="form-control" name="state"
-                                                    placeholder="Enter member state" required>
+                                                    placeholder="Ingrese el estado" required>
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label class="col-md-3 control-label"
-                                                for="demo-textarea-input">Country</label>
+                                                for="demo-textarea-input">Pais</label>
                                             <div class="col-md-9">
-                                                <!--input type="text" class="form-control" name="country" placeholder="Enter member country" required-->
                                                 <select class="form-control" name="country" required
-                                                    placeholder="Enter member country">
+                                                    placeholder="Ingrese el pais">
                                                     <option selected value="{{ $ipInfo && $ipInfo['country'] }}">
                                                         {{ $ipInfo && $ipInfo['country'] }}</option>
                                                     <option value="United States">United States</option>
@@ -530,85 +510,77 @@
                                         </div>
 
                                         <div class="form-group pad-ve">
-                                            <label class="col-md-3 control-label">Sex</label>
+                                            <label class="col-md-3 control-label">Sexo</label>
                                             <div class="col-md-9">
 
                                                 <!-- Radio Buttons -->
                                                 <div class="radio">
                                                     <input id="demo-form-radio" class="magic-radio" value="male"
                                                         type="radio" name="sex" checked>
-                                                    <label for="demo-form-radio">Male</label>
+                                                    <label for="demo-form-radio">Masculino</label>
                                                     <input id="demo-form-radio-2" class="magic-radio" value="female"
                                                         type="radio" name="sex">
-                                                    <label for="demo-form-radio-2">Female</label>
+                                                    <label for="demo-form-radio-2">Femenino</label>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="form-group pad-ver">
-                                            <label class="col-md-3 control-label">Marital Status</label>
+                                            <label class="col-md-3 control-label">Estado Marital</label>
                                             <div class="col-md-9">
                                                 <div class="radio">
                                                     <!-- Inline radio buttons -->
                                                     <input id="demo-inline-form-radio" class="magic-radio" value="single"
                                                         type="radio" name="marital_status" checked>
-                                                    <label for="demo-inline-form-radio">Single</label>
+                                                    <label for="demo-inline-form-radio">Soltero</label>
 
                                                     <input id="demo-inline-form-radio-2" class="magic-radio"
                                                         value="married" type="radio" name="marital_status">
-                                                    <label for="demo-inline-form-radio-2">Married</label>
+                                                    <label for="demo-inline-form-radio-2">Casado</label>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label class="col-md-3 control-label" for="demo-text-input">Member
-                                                Since</label>
+                                            <label class="col-md-3 control-label" for="demo-text-input">Miembro desde:</label>
                                             <div class="col-md-9">
-                                                <input type="text" id="member_since" placeholder="Member Since"
+                                                <input type="text" id="member_since" placeholder="Miembro desde"
                                                     name="member_since" class="datepicker form-control" required />
 
                                             </div>
                                         </div>
                                         <div class="form-group" id="member_status_div" style="display:none">
-                                            <label class="col-md-3 control-label" for="demo-text-input">Member
-                                                Status</label>
+                                            <label class="col-md-3 control-label" for="demo-text-input">Estado del Miembro</label>
                                             <div id="selectparent" class="col-md-9">
                                                 <select id="member_status" name="member_status"
                                                     class="selectpicker col-xs-6 col-sm-4 col-md-6 col-lg-9"
                                                     data-style="btn-info">
-                                                    <option selected value="old">Member</option>
-                                                    <option value="new">First Timer</option>
+                                                    <option selected value="old">Miembro</option>
+                                                    <option value="new">Nuevo Miembro</option>
                                                 </select>
                                             </div>
                                         </div>
                                         <div id="wedding" class="form-group" style="display:none">
-                                            <label class="col-md-3 control-label" for="demo-text-input">Wedding
-                                                Aniversary</label>
+                                            <label class="col-md-3 control-label" for="demo-text-input">Aniversario de Bodas</label>
                                             <div class="col-md-9">
-                                                <input id="anniversary" type="text" placeholder="Wedding Anniversary"
+                                                <input id="anniversary" type="text" placeholder="Aniversario de bodas"
                                                     name="wedding_anniversary" class="datepicker form-control" />
 
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label class="col-md-3 control-label">Photo</label>
+                                            <label class="col-md-3 control-label">Foto</label>
                                             <div class="col-md-9">
                                                 <div class="btn btn-file element">
                                                     <i class="fa fa-3x fa-folder"></i>
-                                                    <span class="name">Choose File</span>
+                                                    <span class="name">Seleccione el archivo</span>
                                                     <input id="img-input" type="file" accept="image/*"
                                                         name="photo">
                                                     <!-- <input  id="img-input" type="file" accept="image/*" capture="user" name="photo"> -->
                                                 </div>
                                                 <div class="btn element" data-toggle="modal" data-target="#myModal">
-                                                    <i class="fa fa-camera"></i><span class="name">From Cam</span>
+                                                    <i class="fa fa-camera"></i><span class="name">Desde la Cámara</span>
                                                     <input id="img-input" type="file" accept="image/*" capture
                                                         name="photo" style="display: none">
                                                 </div>
-                                                <!-- <span class="pull-left btn btn-primary btn-file">
-               Select...
-               <input id="img-input" type="file" accept="image/*" capture name="photo">
-              </span> -->
-                                                <!-- <input type="file" accept="image/*" capture="camera"> -->
                                             </div>
                                         </div>
                                         <div class="image" id="img-show-container" style="display: none">
@@ -616,32 +588,25 @@
                                             <canvas id="img-show" class="img-thumbnail img-response"></canvas>
                                         </div>
                                         <div class="form-group">
-                                            <label class="col-md-3 control-label">Relative</label>
+                                            <label class="col-md-3 control-label">Pariente</label>
                                             <div class="col-md-9">
                                                 <button type="button" data-target="#demo-default-modal"
                                                     id="open-modal-btn" data-toggle="modal"
-                                                    class="btn btn-primary btn-lg" style="display:none;">Launch demo
-                                                    modal</button>
-                                                <button id="add-relative-btn" class="btn btn-info"type="button">Add
-                                                    Relative</button>
+                                                    class="btn btn-primary btn-lg" style="display:none;">Lanzar el modelo demo</button>
+                                                <button id="add-relative-btn" class="btn btn-info"type="button">Agregar pariente</button>
                                             </div>
                                         </div>
-                                        <!--div class="row">
-             <div class="col-md-3" style="">
-              <button class="btn btn-info pull-center" type="submit">REGISTER MEMBER</button>
-             </div>
-            </div-->
                                         <div class="form-group" style="padding-top:50px">
                                             <div class="col-md-9">
                                                 <span class=" pull-right">
                                                     <button id="submit" class="btn btn-info pull-center"
-                                                        type="submit">REGISTER MEMBER</button>
+                                                        type="submit">REGISTRAR MIEMBRO</button>
                                                 </span>
                                             </div>
                                             <div class="col-md-3">
                                                 <span class=" pull-left">
                                                     <button class="btn-danger"
-                                                        onclick="resetForm('#register-form')">reset</button>
+                                                        onclick="resetForm('#register-form')">Resetear</button>
                                                 </span>
                                             </div>
                                         </div>
@@ -662,7 +627,7 @@
                                     <div class="modal-header">
                                         <button type="button" class="close" data-dismiss="modal"><i
                                                 class="pci-cross pci-circle"></i></button>
-                                        <h4 class="modal-title">Add a Relative</h4>
+                                        <h4 class="modal-title">Agregar Pariente</h4>
                                     </div>
 
 
@@ -670,11 +635,10 @@
                                     <div class="modal-body">
 
                                         <div class="form-group">
-                                            <label class="col-md-2 control-label" for="demo-email-input">Search
-                                                Relative</label>
+                                            <label class="col-md-2 control-label" for="demo-email-input">Buscar Pariente</label>
                                             <div class="col-md-10">
                                                 <input type="text" id="search-relative-input" class="form-control"
-                                                    name="name" placeholder="Enter relative Name">
+                                                    name="name" placeholder="Ingresar el nombre del Pariente">
                                             </div>
                                         </div>
 
@@ -685,7 +649,7 @@
                                     <div class="modal-footer">
                                         <button data-dismiss="modal" id="close-modal-btn" class="btn btn-default"
                                             type="button">Close</button>
-                                        <button class="btn btn-primary">Save changes</button>
+                                        <button class="btn btn-primary">Guardar Cambios</button>
                                     </div>
                                 </div>
                             </div>
@@ -700,26 +664,17 @@
                                         <div class="modal-header">
                                             <button type="button" class="fa fa-3x close" onclick="stopWebcam();"
                                                 data-dismiss="modal">&times;</button>
-                                            <h4 class="modal-title">Take a photo</h4>
+                                            <h4 class="modal-title">Tomar una foto</h4>
                                         </div>
                                         <div class="modal-body">
-                                            <!-- <h1>Take a snapshot of the current video stream</h1>
-        Click on the Start WebCam button.
-        <p>
-        <button onclick="startWebcam();">Start WebCam</button>
-        <button onclick="stopWebcam();">Stop WebCam</button>
-         <button onclick="snapshot();">Take Snapshot</button>
-        </p>
-        <video onclick="snapshot(this);" width=400 height=400 id="video" controls autoplay></video> -->
                                             <div id="captured" class="" style="display:none">
-                                                <h3 class="text-primary"> Screenshots : <h3>
+                                                <h3 class="text-primary"> Capturas : <h3>
                                                         <canvas id="myCanvas" width="400" height="350"></canvas>
                                             </div>
 
                                             <!--  -->
                                             <div id="container-cam">
-                                                <button class="btn btn-warning" onclick="startWebcam();">Start
-                                                    WebCam</button>
+                                                <button class="btn btn-warning" onclick="startWebcam();">Iniciar Webcam</button>
                                                 <div id="vid_container">
                                                     <video id="video" autoplay playsinline></video>
                                                     <div id="video_overlay"></div>
@@ -739,9 +694,9 @@
                                         <div class="modal-footer">
                                             <button id="choose-img" type="button"
                                                 onclick="choose(canvas); stopWebcam();" class="btn btn-success"
-                                                data-dismiss="modal" style="display:none">Select Image</button>
+                                                data-dismiss="modal" style="display:none">Seleccionar Imagenes</button>
                                             <button type="button" onclick="stopWebcam();" class="btn btn-default"
-                                                data-dismiss="modal">Close</button>
+                                                data-dismiss="modal">Cerrar</button>
                                         </div>
                                     </div>
 
@@ -858,7 +813,7 @@
                         }
                     })
                     .fail((e) => {
-                        swal("Oops", "Internal Server Error", "error");
+                        swal("Oops", "Error en el servidor", "error");
                         toggleAble('#submit', false)
                         console.log(e);
                     })
@@ -867,7 +822,7 @@
         let html = `<div class="form-group">
 					<label class="col-md-3 control-label">Relative</label>
 					<div class="col-md-9">
-					<button id="add-relative-btn"  class="btn btn-danger"type="button">Add Relative</button>
+					<button id="add-relative-btn"  class="btn btn-danger"type="button">Agregar pariente</button>
 					</div>
 				</div>`;
         $('#add-relative-btn').on('click', function() {
@@ -890,21 +845,21 @@
 	        <input  value="${name}" readonly>
 	        <input name="relative_${id}" value="${id}" hidden=hidden>
 					<select name="relationship_${id}" class="selectpicker" style="border:1px solid #ccc;display:inline !important;outline:none" data-style="btn-success" required>
-					<option value="relative">Relationship</option>
-						<option value="husband">Husband</option>
-						<option value="wife">Wife</option>
-						<option value="brother">Brother</option>
-						<option value="sister">Sister</option>
-						<option value="father">Father</option>
-						<option value="mother">Mother</option>
-						<option value="son">Son</option>
-						<option value="daughter">Daughter</option>
+					<option value="relative">Relacion</option>
+						<option value="husband">Esposo</option>
+						<option value="wife">Esposa</option>
+						<option value="brother">Hermano</option>
+						<option value="sister">Hermana</option>
+						<option value="father">Padre</option>
+						<option value="mother">Madre</option>
+						<option value="son">Hijo</option>
+						<option value="daughter">Hija</option>
 					</select>
-					<button  class="btn btn-xs btn-danger"type="button" onClick="remove_relative(${id})">Remove Relative</button>
+					<button  class="btn btn-xs btn-danger"type="button" onClick="remove_relative(${id})">Eliminar Pariente</button>
 					</div>
 				</div>`)
 
-            $('#close-modal-btn').trigger('click');
+            $('#close-modal-btn').trigger('click'); 
             $('#relatives-result-container').html('')
             $('#search-relative-input').val('')
 
@@ -924,14 +879,14 @@
 
                 if (typeof data.result == 'string' || data.result.message) {
                     $('#relatives-result-container').html(
-                        '<span style="height:50px" class="text-info">No result found</span>')
+                        '<span style="height:50px" class="text-info">No se ha encontrado resultado</span>')
                     return
                 }
                 console.log(typeof data.result)
                 for (let person in data.result) {
                     console.log(data.result[person])
                     let table = `<div class="col-md-12" style="margin-bottom:10px"><span class="text-info" style="margin-right:30px;width:100px !important">${data.result[person].firstname} ${data.result[person].lastname}</span> <button onClick="add_relative(${data.result[person].id},'${data.result[person].firstname} ${data.result[person].lastname}' )" type="button" class="btn-sm btn btn-info select-relativ
-	e">Select Relative</button></div>
+	e">Seleccionar Pariente</button></div>
 							`;
                     $('#relatives-result-container').append(table)
                 }
@@ -956,32 +911,6 @@
         var video;
         var webcamStream;
 
-        // function startWebcam() {
-        // 	if (navigator.getUserMedia) {
-        // 		 navigator.getUserMedia (
-        //
-        // 				// constraints
-        // 				{
-        // 					 video: true,
-        // 					 audio: false
-        // 				},
-        //
-        // 				// successCallback
-        // 				function(localMediaStream) {
-        // 						video = document.querySelector('video');
-        // 					 video.src = window.URL.createObjectURL(localMediaStream);
-        // 					 webcamStream = localMediaStream;
-        // 				},
-        //
-        // 				// errorCallback
-        // 				function(err) {
-        // 					 console.log("The following error occured: " + err);
-        // 				}
-        // 		 );
-        // 	} else {
-        // 		 console.log("getUserMedia not supported");
-        // 	}
-        // }
 
         function stopWebcam() {
             // if (webcamStream) {

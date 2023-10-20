@@ -70,7 +70,7 @@
                         <div class="panel-body">
                             <form id="sub-account" method="post">
                                 <div class="form-group row">
-                                    <label for="staticEmail" class="col-sm-4 col-form-label">Account Name</label>
+                                    <label for="staticEmail" class="col-sm-4 col-form-label">Nombre de Cuenta</label>
                                     <div class="col-sm-8">
                                         <input id="commission_account_name" class="form-control" type="text"
                                             name="commission_account_name" value="">
@@ -78,7 +78,7 @@
                                 </div>
 
                                 <div class="form-group row">
-                                    <label for="staticEmail" class="col-sm-4 col-form-label">Account Number</label>
+                                    <label for="staticEmail" class="col-sm-4 col-form-label">Numero de Cuenta</label>
                                     <div class="col-sm-8">
                                         <input id="commission_account_number" class="form-control" type="number"
                                             name="commission_account_number" value="">
@@ -86,7 +86,7 @@
                                 </div>
 
                                 <div class="form-group row">
-                                    <label for="staticEmail" class="col-sm-4 col-form-label">Bank Name</label>
+                                    <label for="staticEmail" class="col-sm-4 col-form-label">Nombre del Banco</label>
                                     <div class="col-sm-8">
                                         <select id="bank_select" class="form-control" name="commission_account_bank">
                                         </select>

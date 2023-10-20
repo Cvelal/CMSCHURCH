@@ -44,7 +44,7 @@ class Setting extends Model
             $setting->save();
             return response()->json(['status' => true,]);
         }
-        return response()->json(['status' => false, 'text' => "No photo file"]);
+        return response()->json(['status' => false, 'text' => "No hay foto"]);
     }
 
     public static function saveAppName(Request $request)
@@ -67,7 +67,7 @@ class Setting extends Model
             $setting->save();
             return response()->json(['status' => true,]);
         }
-        return response()->json(['status' => false, 'text' => "No Name set"]);
+        return response()->json(['status' => false, 'text' => "No hay nombre configurado"]);
     }
 
     // Relationship

@@ -204,10 +204,10 @@
             // deletes
             //for delete collection
             $('#c-type-table').on('click', '.d-collection', (e) => {
-                confirmation = confirm('Are you sure you want to delete the collection type?')
+                confirmation = confirm('¿Esta seguro de eliminar este tipo de recaudación?')
                 if (confirmation) {
                     $this = $(e.target)
-                    toggleAble($this, true, "deleting")
+                    toggleAble($this, true, "Eliminando")
                     data = {}
                     data.id = e.target.id
                     data._token = "{{ csrf_token() }}"
@@ -231,8 +231,8 @@
                     } else if (i == 1) {
                         $(this).html(`
             <input type="hidden" value="${id}"  />
-            <button type="button" class="restore btn btn-sm btn-warning" style="float: left;">Cancel</button><div>
-            <button type="button" class="save btn btn-sm btn-success" style="float: right;">Save</button>
+            <button type="button" class="restore btn btn-sm btn-warning" style="float: left;">Cancelar</button><div>
+            <button type="button" class="save btn btn-sm btn-success" style="float: right;">Guardar</button>
           `)
                     }
                     i++
@@ -260,7 +260,7 @@
 
             //for delete service
             $('#s-type-table').on('click', '.d-service', (e) => {
-                confirmation = confirm('Are you sure you want to delete the service type?')
+                confirmation = confirm('¿Esta seguro de eliminar este tipo de servicio?')
                 if (confirmation) {
                     $this = $(e.target)
                     toggleAble($this, true, "deleting")

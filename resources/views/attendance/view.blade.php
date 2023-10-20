@@ -91,7 +91,7 @@
             <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
             <ol class="breadcrumb">
                 <li>
-                    <i class="fa fa-home"></i><a href="{{ route('dashboard') }}"> Dashboard</a>
+                    <i class="fa fa-home"></i><a href="{{ route('dashboard') }}"> Tablero</a>
                 </li>
                 <li class="active">Todo</li>
             </ol>
@@ -196,7 +196,7 @@
                                             <td>{{ $list->attendance_date }}</td>
                                             <td>{{ $list->created_at }}</td>
                                             <td><button id="{{ $list->attendance_date }}" type="submit"
-                                                    class="btn btn-primary viewBtn" onclick="viewer(this);">View</button>
+                                                    class="btn btn-primary viewBtn" onclick="viewer(this);">Ver</button>
                                             </td>
                                         </tr>
                                         <?php $count++; ?>
@@ -236,7 +236,7 @@
                                             <td>
                                                 <button data-fullname="{{ $member->getFullname() }}"
                                                     data-id="{{ $member->id }}"
-                                                    class="btn btn-primary show-member-history fa fa-eye"> View</button>
+                                                    class="btn btn-primary show-member-history fa fa-eye"> Ver</button>
                                             </td>
                                         </tr>
                                         <?php $count++; ?>
@@ -297,7 +297,7 @@
                                 </div>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
                             </div>
                         </div>
                     </div>
@@ -391,22 +391,22 @@
                 },
                 ajax: `../member/attendance/${id}`,
                 columns: [{
-                        title: "Service type",
+                        title: "Tipo de Servicio",
                         data: 'service_types.name',
                         name: 'service_types.name'
                     },
                     {
-                        title: "Attendance",
+                        title: "Asistencia",
                         data: 'attendance',
                         name: 'attendance'
                     },
                     {
-                        title: "Transaction Date",
+                        title: "Fecha de la transaccion",
                         data: 'updated_at',
                         name: 'updated_at'
                     },
                     {
-                        title: "Processed Date",
+                        title: "Fecha del Proceso",
                         data: 'date',
                         name: 'date'
                     },

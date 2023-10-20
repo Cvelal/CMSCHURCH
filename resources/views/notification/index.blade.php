@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    General Announcements
+    Anuncios Generales
 @endsection
 
 @section('link')
@@ -19,7 +19,7 @@
             <!--Page Title-->
             <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
             <div id="page-title">
-                <h1 class="page-header text-overflow">Create Announcements</h1>
+                <h1 class="page-header text-overflow">Crear Anuncios</h1>
             </div>
             <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
             <!--End page title-->
@@ -32,9 +32,9 @@
                     </a>
                 </li>
                 <li>
-                    <a href="{{ route('dashboard') }}">Dashboard</a>
+                    <a href="{{ route('dashboard') }}">Tablero</a>
                 </li>
-                <li class="active">Announcements</li>
+                <li class="active">Anuncios</li>
             </ol>
             <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
             <!--End breadcrumb-->
@@ -49,7 +49,7 @@
                 <div class="col-lg-8 col-lg-offset-2">
                     <div class="panel">
                         <div class="panel-heading">
-                            <h1 class="text-center" style="padding-top:5px">Create Announcements</h2>
+                            <h1 class="text-center" style="padding-top:5px">Crear anuncios</h2>
                         </div>
                         <div class="col-md-9 col-lg-offset-2">
                             @if (Session::has('message'))
@@ -71,7 +71,7 @@
                                     @csrf <div class="panel-body">
                                         <div class="row">
                                             <div class="col-md-4 mar-btm">
-                                                <label class=" control-label" for="inputEmail">To</label>
+                                                <label class=" control-label" for="inputEmail">Para</label>
                                                 <?php if(isset($_GET['mail'])) { ?>
                                                 <input type="email" id="inputEmail" name="to[]"
                                                     value="<?php echo $_GET['mail']; ?> " class="form-control">
@@ -88,7 +88,7 @@
                                             <?php }?>
 
                                             <div class="col-md-4 mar-btm">
-                                                <label class=" control-label" for="inputSubject">By who</label>
+                                                <label class=" control-label" for="inputSubject">De:</label>
 
                                                 <input type="text" id="by_who"
                                                     class="form-control{{ $errors->has('by_who') ? ' is-invalid' : '' }}"
@@ -102,7 +102,7 @@
 
                                             </div>
                                             <div class="col-md-4 mar-btm">
-                                                <label class=" control-label" for="inputSubject">Start Time</label>
+                                                <label class=" control-label" for="inputSubject">Hora de inicio</label>
                                                 <div class="input-group clockpicker col-md-9">
                                                     <input type="text" class="form-control" value="09:00"
                                                         name="time">
@@ -115,7 +115,7 @@
                                         </div>
                                         <div class="row">
                                             <div class="col-md-4 mar-btm">
-                                                <label class=" control-label" for="inputSubject">Stop Time</label>
+                                                <label class=" control-label" for="inputSubject">Hora de finalización</label>
                                                 <div class="input-group clockpicker col-md-9">
                                                     <input type="text" class="form-control" value="09:30"
                                                         name="stime">
@@ -125,7 +125,7 @@
                                                 </div>
                                             </div>
                                             <div class="col-md-4 mar-btm">
-                                                <label class="control-label" for="inputSubject">Start Date</label>
+                                                <label class="control-label" for="inputSubject">Fecha de inicio</label>
                                                 <input
                                                     style="border:1px solid rgba(0,0,0,0.07);height: 33px;
                                   font-size: 13px;
@@ -133,7 +133,7 @@
                                   width: 100%;
                                    color: #555;
                                   background-color: #fff;outline:none; margin-top:2px;padding:2px 10px"
-                                                    type="text" placeholder="Event Date" name="sdate"
+                                                    type="text" placeholder="Fecha del evento" name="sdate"
                                                     class="datepicker" />
 
                                                 <br>
@@ -145,7 +145,7 @@
 
                                             </div>
                                             <div class="col-md-4 mar-btm">
-                                                <label class=" control-label" for="inputSubject">Stop Date</label>
+                                                <label class=" control-label" for="inputSubject">Fecha de finalización</label>
                                                 <input
                                                     style="border:1px solid rgba(0,0,0,0.07);height: 33px;
                                   font-size: 13px;
@@ -153,7 +153,7 @@
                                   width: 100%;
                                    color: #555;
                                   background-color: #fff;outline:none; margin-top:2px;padding:2px 10px"
-                                                    type="text" placeholder="Event Date" name="date"
+                                                    type="text" placeholder="Fecha del evento" name="date"
                                                     class="datepicker" />
 
                                                 <br>
@@ -173,11 +173,11 @@
                                         <div class="row">
 
 
-                                            <textarea placeholder="Message" name="message" rows="10" class="form-control"></textarea>
+                                            <textarea placeholder="Mensaje" name="message" rows="10" class="form-control"></textarea>
                                         </div>
                                         <div class="panel-footer text-right">
                                             <button id="mail-send-btn" type="submit" class="btn btn-primary">
-                                                <i class="demo-psi-mail-send icon-lg icon-fw"></i> Create Announcement
+                                                <i class="demo-psi-mail-send icon-lg icon-fw"></i> Crear anuncio
                                             </button>
                                         </div>
                                 </form>

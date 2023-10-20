@@ -43,9 +43,9 @@ $(document).on('nifty.ready', function() {
     // -----------------------------------------------------------------
     $('#demo-calendar').fullCalendar({
         header: {
-            left: 'prev,next today',
+            left: 'prev,siguiente hoy',
             center: 'title',
-            right: 'month,agendaWeek,agendaDay'
+            right: 'Mes,Semana,Dia'
         },
         editable: true,
         droppable: true, // this allows things to be dropped onto the calendar
@@ -56,28 +56,28 @@ $(document).on('nifty.ready', function() {
                 $(this).remove();
             }
         },
-        defaultDate: '2017-12-12',
+        defaultDate: '2022-12-12',
         eventLimit: true, // allow "more" link when too many events
         events: [
             {
-                title: 'Happy Hour',
-                start: '2017-12-05',
-                end: '2017-12-07',
+                title: 'Hora feliz',
+                start: '2022-12-05',
+                end: '2022-12-07',
                 className: 'purple'
             },
             {
-                title: 'Birthday Party',
+                title: 'Fiesta de Cumpleaños',
                 start: '2017-12-15',
                 end: '2017-12-17',
                 className: 'mint'
             },
             {
-                title: 'All Day Event',
+                title: 'Todos los eventos del Dia',
                 start: '2017-12-15',
                 className: 'warning'
             },
             {
-                title: 'Meeting',
+                title: 'Reunion',
                 start: '2017-12-20T10:30:00',
                 end: '2017-12-20T12:30:00',
                 className: 'danger'

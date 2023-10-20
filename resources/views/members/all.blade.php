@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    All Members
+  Todos los miembros
 @endsection
 
 @section('link')
@@ -18,7 +18,7 @@
             <!--Page Title-->
             <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
             <div id="page-title">
-                <h1 class="page-header text-overflow">Member</h1>
+                <h1 class="page-header text-overflow">Miembro</h1>
             </div>
             <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
             <!--End page title-->
@@ -26,9 +26,9 @@
             <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
             <ol class="breadcrumb">
                 <li>
-                    <i class="fa fa-home"></i><a href="{{ route('dashboard') }}"> Dashboard</a>
+                    <i class="fa fa-home"></i><a href="{{ route('dashboard') }}">Tablero</a>
                 </li>
-                <li class="active">All</li>
+                <li class="active">Todo</li>
             </ol>
             <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
             <!--End breadcrumb-->
@@ -40,7 +40,7 @@
             <!--===================================================-->
             <div class="panel rounded-top" style="background-color: #e8ddd3;">
                 <div class="panel-heading card-block text-center">
-                    <h1 class="panel-title text-primary text-bold">List of Members In {{ \Auth::user()->branchname }}</h1>
+                    <h1 class="panel-title text-primary text-bold">Lista de miembros de {{ \Auth::user()->branchname }}</h1>
                 </div>
                 <div class="panel-body">
                     <!--div style="height:100px;border:1px solid green">
@@ -56,10 +56,10 @@
                                 </tbody>
                             </table>
                             <select id="action" name="action">
-                                <option>with selected</option>
-                                <option value="delete">delete</option>
+                                <option>Seleccionar</option>
+                                <option value="delete">Eliminar</option>
                             </select>
-                            <input class="btn-danger" id="apply" type="button" value="apply">
+                            <input class="btn-danger" id="apply" type="button" value="Aplicar">
                         </div>
                     </form>
                 </div>
@@ -105,14 +105,14 @@
                 },
                 ajax: "{{ route('members.all') }}",
                 columns: [{
-                        title: '<input id="select-all" type="checkbox" /> Select all',
+                        title: '<input id="select-all" type="checkbox" /> Seleccionar todo',
                         data: 'id',
                         render: (data) => (`<input type="checkbox" name="member[]" value="${data}" />`),
                         name: 'id'
                     },
                     // { title: "S/N", render: () => (i++), name: 'id' },
                     {
-                        title: "Photo",
+                        title: "Foto",
                         data: 'photo',
                         render: (photo) => (
                             `<img src="{{ url('images/') }}/${photo}"  class="img-md img-circle" alt="Profile Picture">`
@@ -120,7 +120,7 @@
                         name: 'photo'
                     },
                     {
-                        title: "Full Name",
+                        title: "Nombre completo",
                         data: {
                             firstname: 'firstname',
                             lastname: 'lastname'
@@ -130,7 +130,7 @@
                     },
                     // { title: "Occupation", data: 'occupation', name: 'occupation' },
                     {
-                        title: "Member Status",
+                        title: "Estado del Miembro",
                         data: {
                             member_status: 'member_status',
                             id: 'id',
@@ -144,29 +144,29 @@
                     },
                     // { title: "Marital Status", data: 'marital_status', name: 'marital_status' },
                     {
-                        title: "phone Number",
+                        title: "Numero de telefono",
                         data: 'phone',
                         name: 'phone'
                     },
                     {
-                        title: "Email",
+                        title: "Correo",
                         data: 'email',
                         name: 'email'
                     },
                     {
-                        title: "Sex",
+                        title: "Sexo",
                         data: 'sex',
                         name: 'sex'
                     },
                     // { title: "Birthdate", data: 'dob', name: 'dob' },
                     // { title: "Member Since", data: 'member_since', name: 'member_since' },
                     {
-                        title: "Position",
+                        title: "Posición",
                         data: 'position',
                         name: 'position'
                     },
                     {
-                        title: "Address",
+                        title: "Dirección",
                         data: 'address',
                         name: 'address'
                     },
@@ -176,7 +176,7 @@
                     // { title: "Country", data: 'country', name: 'country' },
                     // { title: "wedding Anniversary", data: 'wedding_anniversary', name: 'wedding_anniversary' },
                     {
-                        title: "Action",
+                        title: "Acción",
                         data: 'id',
                         name: 'action',
                         render: (id) => (`
@@ -196,7 +196,7 @@
             $('#users-table').on('click', '.d-member', (e) => {
                 // e.preventDefault()
                 $this = $(e.target)
-                confirmation = confirm('Are you sure you want to delete the member?')
+                confirmation = confirm('¿Esta seguro de eliminar este miembro?')
                 if (confirmation) {
                     data = {}
                     toggleAble($this, true, "deleting")
@@ -222,148 +222,136 @@
                 id = $(this).attr('data-id')
                 let i = 0;
                 columns = $(this).parent().closest('tr').find('td').each(function() {
-                    if (i == 3) {
+                    if (i == 2) {
                         fullname = $(this).text().split(' ');
                         fname = fullname[0]
                         lname = fullname[1]
-                        $(this).html('FirstName<input value="' + fname + '" />')
-                        $(this).append('LastName<input value="' + lname + '" />')
-                    } else if (i == 4) {
+                        $(this).html('Nombres<input value="' + fname + '" />')
+                        $(this).append('Apellidos<input value="' + lname + '" />')
+                    } else if (i == 19) {
                         $(this).html(`
               <select name="occupation" class="selectpicker col-xs-6 col-sm-4 col-md-6 col-lg-9" data-style="btn-success" required="" tabindex="-98">
                 <option value="${$(this).text()}">${$(this).text()}</option>
                 <option value="Doctor">Doctor</option>
-                <option value="Engineer">Engineer</option>
-                <option value="Surveyor">Surveyor</option>
-                <option value="Business Person">Business Person</option>
-                <option value="Lecturer">Lecturer</option>
-                <option value="Professor">Professor</option>
-                <option value="Pharmacist">Pharmacist</option>
-                <option value="Trader">Trader</option>
-                <option value="Civil Servant">Civil Servant</option>
-                <option value="Retired">*Retired</option>
-                <option value="Other">Other</option>
+                <option value="Engineer">Ingeniero</option>
+                <option value="Business Person">Empresario</option>
+                <option value="Professor">Profesor</option>
+                <option value="Retired">Jubilado</option>
+                <option value="Other">Otro</option>
               </select>
             `)
-                    } else if (i == 5) {
+                    } else if (i == 3) {
                         value = ($(this).text() === 'Member') ? 'old' : 'new';
                         $(this).html(`
               <select id="member_status" name="member_status" class="selectpicker col-xs-6 col-sm-4 col-md-6 col-lg-9" data-style="btn-info" tabindex="-98">
                 <option value="${value}">${$(this).text()}</option>
                 <option value="old">Member</option>
-                <option value="new">First Timer</option>
+                <option value="new">Primer miembro</option>
               </select>
             `)
-                    } else if (i == 6) {
+                    } else if (i == 11) {
                         option = ($(this).text() === 'single') ? 'old' : 'new';
                         $(this).html(`
               <div class="col-md-9">
                     <input id="demo-inline-form-radio" class="magic-radio" value="single" type="radio" name="marital_status" ${($(this).text() === 'single') ? 'checked=""' : ''}>
-                    <label for="demo-inline-form-radio">Single</label>
+                    <label for="demo-inline-form-radio">Soltero</label>
 
                     <input id="demo-inline-form-radio-2" class="magic-radio" value="married" ${($(this).text() === 'married') ? 'checked=""' : ''} type="radio" name="marital_status">
-                    <label for="demo-inline-form-radio-2">Married</label>
+                    <label for="demo-inline-form-radio-2">Casado</label>
               </div>
             `)
-                    } else if (i == 7) {
+                    } else if (i == 4) {
                         $(this).html(`
               <div class="col-md-9">
-                <input type="number" class="form-control" value="${$(this).text()}" name="phone" placeholder="Enter your phone number" required="">
+                <input type="number" class="form-control" value="${$(this).text()}" name="phone" placeholder="Ingrese el numero de telefono" required="">
               </div>
             `)
-                    } else if (i == 8) {
+                    } else if (i == 5) {
                         $(this).html(`
               <div class="col-md-9">
-                <input type="email" id="demo-email-input" value="${$(this).text()}" class="form-control" name="email" placeholder="Enter your email" required="">
+                <input type="email" id="demo-email-input" value="${$(this).text()}" class="form-control" name="email" placeholder="Ingrese correo" required="">
               </div>
             `)
-                    } else if (i == 9) {
+                    } else if (i == 6) {
                         $(this).html(`
               <div class="col-md-9">
                 <input id="demo-form-radio" class="magic-radio" value="male" type="radio" name="sex" ${($(this).text() === 'male') ? 'checked=""' : ''}>
-                <label for="demo-form-radio">Male</label>
+                <label for="demo-form-radio">Masculino</label>
                 <input id="demo-form-radio-2" class="magic-radio" value="female" type="radio" name="sex" ${($(this).text() === 'female') ? 'checked=""' : ''}>
-                <label for="demo-form-radio-2">Female</label>
+                <label for="demo-form-radio-2">Femenino</label>
               </div>
             `)
                     } else if (i == 10) {
                         $(this).html(`
               <div class="col-md-9">
-                <input type="text" placeholder="Date of Birth" value="${$(this).text()}" name="dob" class="datepicker form-control" required="">
+                <input type="text" placeholder="Fecha de cumpleaños" value="${$(this).text()}" name="dob" class="datepicker form-control" required="">
               </div>
             `)
                     } else if (i == 11) {
                         $(this).html(`
               <div class="form-group">
               <div class="col-md-9">
-                <input type="text" id="member_since" value="${$(this).text()}" placeholder="Member Since" name="member_since" class="datepicker form-control" required/>
+                <input type="text" id="member_since" value="${$(this).text()}" placeholder="Miembro desde:" name="member_since" class="datepicker form-control" required/>
               </div>
               </div>
             `)
-                    } else if (i == 12) {
+                    } else if (i == 7) {
                         $(this).html(`
               <div class="col-md-9">
                 <select name="position" class="selectpicker col-xs-6 col-sm-4 col-md-6 col-lg-9" data-style="btn-success">
                   <option selected value="${$(this).text()}">${$(this).text()}</option>
-                  <option value="senior pastor">Senior Pastor</option>
                   <option value="pastor">Pastor</option>
-                  <option value="member">Member</option>
-                  <option value="usher">Usher</option>
-                  <option value="worker">Worker</option>
-                  <option value="chorister">Chorister</option>
-                  <option value="elder">Elder</option>
-                  <option value="technician">Technician</option>
-                  <option value="instrumentalist">Instrumentalist</option>
-                  <option value="deacon">Deacon</option>
-                  <option value="deaconess">Deaconess</option>
-                  <option value="evangelist">Evangelist</option>
-                  <option value="minister">Minister</option>
-                  <option value="protocol">Protocol</option>
-                  <option value="hod">HOD</option>
+                  <option value="member">Miembro</option>
+                  <option value="worker">Obrero</option>
+                  <option value="elder">Anciano</option>
+                  <option value="technician">Tecnico</option>
+                  <option value="instrumentalist">Instrumentista</option>
+                  <option value="evangelist">Evangelista</option>
+                  <option value="minister">Ministro</option>
                 </select>
                 <input type="hidden" value="${id}" name="id" />
               </div>
             `)
-                    } else if (i == 13) {
+                    } else if (i == 8) {
                         $(this).html(`
               <div class="col-md-9">
-                <textarea id="demo-textarea-input" value="${$(this).text()}" name="address" rows="5" class="form-control" placeholder="Address I" required>${$(this).text()}</textarea>
+                <textarea id="demo-textarea-input" value="${$(this).text()}" name="address" rows="5" class="form-control" placeholder="Direccion I" required>${$(this).text()}</textarea>
               </div>
             `)
                     } else if (i == 14) {
                         $(this).html(`
               <div class="col-md-9">
-                <textarea id="demo-textarea-input" value="${$(this).text()}" name="address2" rows="5" class="form-control" placeholder="Address II">${$(this).text()}</textarea>
+                <textarea id="demo-textarea-input" value="${$(this).text()}" name="address2" rows="5" class="form-control" placeholder="Direccion II">${$(this).text()}</textarea>
               </div>
             `)
                     } else if (i == 15) {
                         $(this).html(`
               <div class="col-md-9">
-                <input type="text" class="form-control" value="${$(this).text()}" name="state" placeholder="Enter member state" required>
+                <input type="text" class="form-control" value="${$(this).text()}" name="state" placeholder="Ingrese el estado del miembro" required>
               </div>
             `)
                     } else if (i == 16) {
                         $(this).html(`
               <div class="col-md-9">
-                <input type="text" class="form-control" value="${$(this).text()}" name="city" placeholder="Enter member state" required>
+                <input type="text" class="form-control" value="${$(this).text()}" name="city" placeholder="Ingrese el estado del miembro" required>
               </div>
             `)
                     } else if (i == 17) {
                         $(this).html(`
               <div class="col-md-9">
-                <input type="text" class="form-control" value="${$(this).text()}" name="country" placeholder="Enter member country" required>
+                <input type="text" class="form-control" value="${$(this).text()}" name="country" placeholder="Ingrese el pais del miembro" required>
               </div>
             `)
                     } else if (i == 18) {
                         $(this).html(`
               <div class="col-md-9">
-                <input id="anniversary" value="${$(this).text()}" type="text" placeholder="Wedding Anniversary" name="wedding_anniversary" class="datepicker form-control"/>
+                <input id="anniversary" value="${$(this).text()}" type="text" placeholder="Aniversario de Bodas" name="wedding_anniversary" class="datepicker form-control"/>
               </div>
             `)
-                    } else if (i == 19) {
+                    } else if (i == 9) {
                         $(this).html(`
-              <button type="button" class="restore btn btn-sm btn-warning" style="float: left;">Cancel</button><div>
-              <button type="submit" class="save btn btn-sm btn-success" style="float: right;">Save</button>
+              <button type="button" class="restore btn btn-sm btn-warning" style="float: left;">Cancelar</button><div>
+              <button type="submit" class="save btn btn-sm btn-success" style="float: right;">Guardar</button>
               @csrf
             `)
                     }
@@ -418,7 +406,7 @@
                     loadElement($('#apply'), false);
                     return;
                 }
-                let confirmed = confirm('Are you sure you want to delete selected items?');
+                let confirmed = confirm('¿Esta seguro de eliminar los elementos seleccionados?');
                 if (confirmed) {
                     var values = {
                         'id': example,
@@ -435,7 +423,7 @@
                             // if(response.status){
                             swal('Success', response.text, 'success')
                             // }else{
-                            //   swal('Oops', 'Error Occured', 'error');
+                            //   swal('Oops', 'A currido un error', 'error');
                             // }
                             users_table.ajax.reload(null, false)
                         });
@@ -445,7 +433,7 @@
         });
 
         function makeMember(element, fn) {
-            var confirmed = confirm('Are you sure you make this member a full member?');
+            var confirmed = confirm('¿Esta seguro de cambiar este miembro a miembro completo?');
             if (confirmed) {
                 loadElement($(element), true)
                 var values = {

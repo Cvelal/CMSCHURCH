@@ -295,8 +295,8 @@
                     } else if (i == 11) {
                         $(this).html(`
             <input type="hidden" value="${id}" name="id" />
-            <button type="button" class="restore btn btn-sm btn-warning" style="float: left;">Cancel</button><div>
-            <button type="submit" class="save btn btn-sm btn-success" style="float: right;">Save</button>
+            <button type="button" class="restore btn btn-sm btn-warning" style="float: left;">Cancelar</button><div>
+            <button type="submit" class="save btn btn-sm btn-success" style="float: right;">Guardar</button>
             @csrf
           `)
                     }
@@ -352,7 +352,7 @@
                     loadElement($('#apply'), false);
                     return;
                 }
-                let confirmed = confirm('Are you sure you want to delete selected item(s)?');
+                let confirmed = confirm('¿Esta seguro de eliminar los elementos seleccionados?');
                 if (confirmed) {
                     var values = {
                         'id': example,

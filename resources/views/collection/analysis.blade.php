@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    Collection Analysis
+    Analisis de Recaudaciones
 @endsection
 
 @section('link')
@@ -24,7 +24,7 @@
             <!--Page Title-->
             <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
             <div id="page-title">
-                <h1 class="page-header text-overflow">Collection Analysis</h1>
+                <h1 class="page-header text-overflow">Análisis de recaudaciones</h1>
             </div>
             <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
             <!--End page title-->
@@ -34,9 +34,9 @@
             <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
             <ol class="breadcrumb">
                 <li>
-                    <i class="fa fa-home"></i><a href="{{ route('dashboard') }}"> Dashboard</a>
+                    <i class="fa fa-home"></i><a href="{{ route('dashboard') }}"> Tablero</a>
                 </li>
-                <li class="active">Analysis</li>
+                <li class="active">Análisis</li>
             </ol>
             <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
             <!--End breadcrumb-->
@@ -67,28 +67,28 @@
                         </div>
                         <div class="panel-heading bg-dark">
                             <div class="col-xs-12 text-center">
-                                <h3 class="panel-title">Manual Collections Analysis</h3>
+                                <h3 class="panel-title">Análisis Manual de Recaudaciones</h3>
                             </div>
                         </div>
                         <div class="pad-all" style="background-color: #e8ddd3;" style="overflow: scroll">
                             <div class="row">
                                 <div class="col-xs-6">
-                                    <label for="group" class="">Group By</label>
+                                    <label for="group" class="">Agrupar por</label>
                                     <select id="group" required style="outline:none;" name="sort"
                                         class="selectpicker col-md-12" data-style="btn-primary">
-                                        <option value="1">Days</option>
-                                        <option value="2">Weeks</option>
-                                        <option selected value="3">Months</option>
-                                        <option value="4">Years</option>
+                                        <option value="1">Dias</option>
+                                        <option value="2">Semanas</option>
+                                        <option selected value="3">Meses</option>
+                                        <option value="4">Años</option>
                                     </select>
                                 </div>
                                 <div class="col-xs-6">
-                                    <label for="range" class="">Select Range</label>
+                                    <label for="range" class="">Seleccione rango</label>
                                     <select id="m-i" required style="outline:none;" name="range"
                                         class="selectpicker col-md-12 nav nav-pills ranges" data-style="btn-primary">
-                                        <option selected disabled value="">Choose Number of Months</option>
+                                        <option selected disabled value="">Escoja número de meses</option>
                                         @for ($i = 1; $i < 13; $i++)
-                                            <option value="{{ $i }}">Last{{ $i }} Months</option>
+                                            <option value="{{ $i }}">Úlmos{{ $i }} Meses</option>
                                         @endfor
                                     </select>
                                 </div>
@@ -107,7 +107,7 @@
                     <div class="panel rounded-top">
                         <div class="panel-heading bg-dark">
                             <div class="col-xs-12 text-center">
-                                <h3 class="panel-title">Last 12 Months Collections</h3>
+                                <h3 class="panel-title">Recaudaciones de los últimos 12 meses</h3>
                             </div>
                         </div>
                         <div class="pad-all" style="background-color: #e8ddd3;">
@@ -124,7 +124,7 @@
                     <div class="panel rounded-top">
                         <div class="panel-heading bg-dark">
                             <div class="col-xs-12 text-center">
-                                <h3 class="panel-title">Last 10 Weeks Collections</h3>
+                                <h3 class="panel-title">Recaudaciones de las ultimas 10 semanas</h3>
                             </div>
                         </div>
                         <div class="pad-all" style="background-color: #e8ddd3;">
@@ -142,7 +142,7 @@
                     <div class="panel rounded-top">
                         <div class="panel-heading bg-dark">
                             <div class="col-xs-12 text-center">
-                                <h3 class="panel-title">Last 7 Days Collections</h3>
+                                <h3 class="panel-title">Recaudaciones de los últimos 7 dias</h3>
                             </div>
                         </div>
                         <div class="pad-all" style="background-color: #e8ddd3;">
@@ -160,7 +160,7 @@
                     <div class="panel rounded-top">
                         <div class="panel-heading bg-dark">
                             <div class="col-xs-12 text-center">
-                                <h3 class="panel-title">Yearly Collections</h3>
+                                <h3 class="panel-title">Recaudaciones</h3>
                             </div>
                         </div>
                         <div class="pad-all" style="background-color: #e8ddd3;">
@@ -235,7 +235,7 @@
             $weeks = [];
             $i = 10;
             while ($i > 0) {
-                $weeks[$i] = date('W', strtotime("-$i week")); //1 week ago
+                $weeks[$i] = date('W', strtotime("-$i semana")); //1 week ago
                 $i--;
             }
             ?>
@@ -250,11 +250,11 @@
                         foreach ($collections3 as $collections) {
                             if ($value == $collections->week) {
                                 $found = true;
-                                yData($collections, $c_types, 'week ' . $value);
+                                yData($collections, $c_types, 'semana ' . $value);
                             }
                         }
                         if (!$found) {
-                            noData($c_types, 'week ' . $value);
+                            noData($c_types, 'semana ' . $value);
                         }
                     } ?>
                 ],
@@ -271,7 +271,7 @@
             });
 
             //FOR Day
-            <?php $days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thur', 'Fri', 'Sat']; ?>
+            <?php $days = ['Dom', 'Lun', 'Mar', 'Mier', 'Jue', 'Vie', 'Sab']; ?>
             Morris.Bar({
                 element: 'demo-morris-bar-day',
                 data: [

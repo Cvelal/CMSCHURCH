@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    View Collection Report
+    Reporte de Recaudaciones
 @endsection
 
 @section('link')
@@ -18,7 +18,7 @@
             <!--Page Title-->
             <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
             <div id="page-title">
-                <h1 class="page-header text-overflow">View Collection</h1>
+                <h1 class="page-header text-overflow">Ver Recaudaciones</h1>
             </div>
             <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
             <!--End page title-->
@@ -26,7 +26,7 @@
             <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
             <ol class="breadcrumb">
                 <li>
-                    <i class="fa fa-home"></i><a href="{{ route('dashboard') }}"> Dashboard</a>
+                    <i class="fa fa-home"></i><a href="{{ route('dashboard') }}"> Tablero</a>
                 </li>
                 <li class="active">Report</li>
             </ol>
@@ -42,17 +42,17 @@
                     <!--===================================================-->
                     <div class="panel" style="background-color: #e8ddd3;">
                         <div class="panel-heading">
-                            <h1 class="text-center panel-title">Branch Collection History</h1>
+                            <h1 class="text-center panel-title">Historial de recaudaciones Ministerio</h1>
                         </div>
                         <div class="panel-body" style="overflow:scroll">
                             <table id="b-history" class="table table-striped table-bordered" cellspacing="0" width="100%">
                                 <thead>
-                                    <th>Service Type</th>
+                                    <th>Tipo de Servicio</th>
                                     @foreach ($c_types as $types)
                                         <th>{{ ucwords($types->name) }}</th>
                                     @endforeach
-                                    <th>Collection Date</th>
-                                    <th class="min-tablet">Processed Date</th>
+                                    <th>Fecha de Recaudación</th>
+                                    <th class="min-tablet">Procesamineto de datos</th>
                                 </thead>
                                 <tbody>
                                 </tbody>
@@ -65,18 +65,18 @@
                 <div class="col-md-12 col-md-offset-0" style="margin-bottom:50px">
                     <div class="panel" style="background-color: #e8ddd3;">
                         <div class="panel-heading">
-                            <h1 class="text-center panel-title">Members Collection History</h1>
+                            <h1 class="text-center panel-title">Historial de Recaudacion por miembro</h1>
                         </div>
                         <div class="panel-body text-center clearfix" style="overflow:scroll">
                             <table id="m-history" class="table table-striped table-bordered" cellspacing="0" width="100%">
                                 <thead>
-                                    <th>Member Name</th>
-                                    <th>Service Type</th>
+                                    <th>Nombre del Miembro</th>
+                                    <th>Tipo de Servicio</th>
                                     @foreach ($c_types as $types)
                                         <th>{{ ucwords($types->name) }}</th>
                                     @endforeach
                                     <th>Collection Date</th>
-                                    <th class="min-tablet">Processed Date</th>
+                                    <th class="min-tablet">Fecha de Recaudación</th>
                                 </thead>
                                 <tbody>
                                 </tbody>
@@ -114,7 +114,7 @@
                 setup(res.data)
             })
         var setup = (types) => {
-            $.fn.dataTable.ext.errMode = (e) => console.log(e, 'Error while loading the table data. Please refresh');
+            $.fn.dataTable.ext.errMode = (e) => console.log(e, 'Error mientras se cargaba la tabla. Por favor refrescar la página.');
             var branchTable = $('#b-history').DataTable({
                 processing: true,
                 serverSide: true,
@@ -165,7 +165,7 @@
                 MemberSetup(res.data)
             })
         var MemberSetup = (types) => {
-            // $.fn.dataTable.ext.errMode = (e) => console.log(e,'Error while loading the table data. Please refresh');
+            // $.fn.dataTable.ext.errMode = (e) => console.log(e,'Error mientras se cargaba la tabla. Por favor refrescar la página.');
             var m_HistoryTable = $('#m-history').DataTable({
                 processing: true,
                 serverSide: true,

@@ -70,7 +70,7 @@ const poster = ({url, data, alert, type}, fn) => {
   .done((res) => {
     if (alert !== 'false') {
       if(res.status){
-        swal("Success!", res.text, "success");
+        swal("Exitoso!", res.text, "Exitoso");
       } else {
         swal("Oops", res.text, "error");
       }
@@ -80,7 +80,7 @@ const poster = ({url, data, alert, type}, fn) => {
     }
   })
   .fail((e) => {
-    swal("Oops", "Internal Server Error", "error");
+    swal("Oops", "Error interno", "error");
     if (typeof(fn) === 'function') {
       fn(e)
     }

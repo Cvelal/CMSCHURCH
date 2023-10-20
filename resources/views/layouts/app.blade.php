@@ -49,7 +49,9 @@
 	@if (Route::currentRouteName() == ('calendar') || Route::currentRouteName() == ('notification') || Route::currentRouteName() == ('ticket'))
 	<!--Full Calendar [ OPTIONAL ]-->
 	<link href="{{ URL::asset('plugins/fullcalendar/fullcalendar.min.css') }}" rel="stylesheet">
+	<link href="{{ URL::asset('plugins/fullcalendar/es.js') }}" rel="stylesheet">
 	<link href="{{ URL::asset('plugins/fullcalendar/nifty-skin/fullcalendar-nifty.min.css') }}" rel="stylesheet">
+
 	@endif
 
 	@if (Route::currentRouteName() == 'member.register.form' || Route::currentRouteName() == 'attendance.view.form' || Route::currentRouteName() == 'collection.offering' || Route::currentRouteName() == 'attendance')
@@ -214,21 +216,21 @@
 								<!--Shortcut buttons--> <!--================================-->
 								<div id="mainnav-shortcut" class="hidden">
 									<ul class="list-unstyled shortcut-wrap">
-										<li class="col-xs-3" data-content="My Profile">
+										<li class="col-xs-3" data-content="Mi Perfil">
 											<a class="shortcut-grid" href="dashboard">
 												<div class="icon-wrap icon-wrap-sm icon-circle bg-mint">
 													<i class="fa fa-user"></i>
 												</div>
 											</a>
 										</li>
-										<li class="col-xs-3" data-content="Messages">
+										<li class="col-xs-3" data-content="Mensages">
 											<a class="shortcut-grid" href="dashboard">
 												<div class="icon-wrap icon-wrap-sm icon-circle bg-warning">
 													<i class="demo-pli-speech-bubble-3"></i>
 												</div>
 											</a>
 										</li>
-										<li class="col-xs-3" data-content="Activity">
+										<li class="col-xs-3" data-content="Actividades">
 											<a class="shortcut-grid" href="dashboard">
 												<div class="icon-wrap icon-wrap-sm icon-circle bg-success">
 													<i class="demo-pli-thunder"></i>
@@ -338,13 +340,6 @@
 											<li class="{{Route::currentRouteName() === 'email' ? 'active-sub active' : ''}}">
 												<a href="{{route('email')}}"><i class="fa fa-envelope"></i>Correos</a>
 											</li>
-											<li class="{{Route::currentRouteName() === 'sms' ? 'active-sub active' : ''}}">
-												<a href="{{route('sms')}}"><i class="fa fa-mobile"></i> Envío SMS</a>
-											</li>
-											<li class="{{Route::currentRouteName() === 'inbox' ? 'active-sub active' : ''}}">
-												<a href="{{route('inbox')}}"><i class="fa fa-comments"></i> Comunicador</a>
-											</li>
-
 										</ul>
 									</li>
 									<!-- @ if (\Auth::user()->isAdmin()) -->
@@ -366,9 +361,7 @@
 												<a href="{{route('branch.tools')}}"><i class="fa fa-wrench"></i> Herramientas</a>
 											</li>
 											@endif
-											<li class="{{Route::currentRouteName() === 'branch.options' ? 'active-sub' : ''}}">
-												<a href="{{route('branch.options')}}"><i class="fa fa-cog"></i> Opciones</a>
-											</li>
+											
 
 										</ul>
 									</li>

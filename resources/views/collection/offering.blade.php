@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    Collections
+    Recaudaciones
 @endsection
 
 @section('link')
@@ -16,7 +16,7 @@
             <!--Page Title-->
             <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
             <div id="page-title">
-                <h1 class="page-header text-overflow">Collection</h1>
+                <h1 class="page-header text-overflow">Recaudación</h1>
             </div>
             <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
             <!--End page title-->
@@ -24,7 +24,7 @@
             <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
             <ol class="breadcrumb">
                 <li>
-                    <i class="fa fa-home"></i><a href="{{ route('dashboard') }}"> Dashboard</a>
+                    <i class="fa fa-home"></i><a href="{{ route('dashboard') }}"> Tablero</a>
                 </li>
                 <li class="active">Offering</li>
             </ol>
@@ -54,12 +54,12 @@
                     <div class="col-sm-12 col-md-12 col-md-offset-0">
                         <div class="panel" style="background-color: #e8ddd3;">
                             <div class="panel-body bg-danger demo-nifty-btn table-responsive">
-                                <h1 class="text-center text-light">Ooops! No collection type.</h1>
-                                <h1 class="text-center text-light">Please <?php if (Auth::user()->isAdmin()) {
+                                <h1 class="text-center text-light">Ooops! No hay ningun tipo de recaudación.</h1>
+                                <h1 class="text-center text-light">Por favor <?php if (Auth::user()->isAdmin()) {
                                     echo '<a class="btn btn-primary" href="' . route('branch.tools') . '" > add collection types </a>';
                                 } else {
-                                    echo 'add collection types from admin level';
-                                } ?> to be able to save collection.
+                                    echo 'Agrege tipos de recaudación';
+                                } ?> Para poder guardar recaudación.
                                 </h1>
                             </div>
                         </div>
@@ -68,7 +68,7 @@
                     <div class="col-sm-12 col-md-12 col-md-offset-0">
                         <div class="panel" style="background-color: #e8ddd3;">
                             <div class="panel-heading">
-                                <h1 class="text-center panel-title">Branch Collection</h1>
+                                <h1 class="text-center panel-title">Recaudacion en Ministerio</h1>
                             </div>
                             <div class="panel-body demo-nifty-btn table-responsive">
                                 <style>
@@ -113,7 +113,7 @@
                                         </tbody>
                                     </table>
                                     @if (sizeof($services) == 0)
-                                        <h1 class="text-danger">Please Add service type to be able to save the collection
+                                        <h1 class="text-danger">Pro favor agregue un tipo de servicio para agregar la recaudación.
                                         </h1>
                                     @else
                                         <div class="form-group">
@@ -127,7 +127,7 @@
                                             <div>
                                                 <select required style="outline:none;" name="type"
                                                     class="selectpicker col-md-12" data-style="btn-primary">
-                                                    <option selected disabled value="">Choose Service Type</option>
+                                                    <option selected disabled value="">Seleccione el tipo de servicio</option>
                                                     @foreach ($services as $service)
                                                         <option value="{{ $service->id }}">{{ $service->name }}</option>
                                                     @endforeach
@@ -136,7 +136,7 @@
                                         </div>
                                         <button id="b-save" class="btn btn-warning" type="submit"><i
                                                 class='visible-xs fa fa-save'></i> <span
-                                                class="hidden-xs">SAVE</span></button>
+                                                class="hidden-xs">Guardar</span></button>
                                     @endif
                                 </form>
                             </div>
@@ -146,7 +146,7 @@
                     <div class="col-sm-12 col-md-12 col-md-offset-0">
                         <div class="panel" style="background-color: #e8ddd3;">
                             <div class="panel-heading">
-                                <h3 class="panel-title text-center">Members Collection</h3>
+                                <h3 class="panel-title text-center">Recaudación por Miembro</h3>
                             </div>
                             <div class="panel-body demo-nifty-btn table-responsive">
                                 <form id="member-collection-form" action="{{ route('collection.save.member') }}"
@@ -157,8 +157,8 @@
                                         <thead>
                                             <tr>
                                                 <th>S/N</th>
-                                                <th>Title</th>
-                                                <th>Name</th>
+                                                <th>Titulo</th>
+                                                <th>Nombre</th>
                                                 @foreach ($collections as $collection)
                                                     <th>{{ ucwords($collection->disFormatString()) }}</th>
                                                 @endforeach
@@ -204,22 +204,22 @@
                                                 @endforeach
                                             @else
                                                 <tr>
-                                                    <td>No Members</td>
+                                                    <td>No hay Miembros</td>
                                                 </tr>
                                             @endif
                                             <div class="row">
                                                 <div class="col-md-4">
-                                                    <h3><label for="date">Choose Date</label></h3>
+                                                    <h3><label for="date">Escoja la fecha</label></h3>
                                                     <input
                                                         style="border:1px solid rgba(0,0,0,0.07);height: 33px; font-size: 13px; border-radius: 3px;display: block;color: #555; background-color: #fff;outline:none; padding:2px 10px"
                                                         type="text" placeholder="Choose Date" name="date_collected"
                                                         class="datepicker form-control" required />
                                                 </div>
                                                 <div class="col-md-4 form-group">
-                                                    <h3><label for="date">Service Type</label></h3>
+                                                    <h3><label for="date">Tipo de Servicio</label></h3>
                                                     <select required style="outline:none" name="type"
                                                         class="selectpicker col-md-12" data-style="btn-primary">
-                                                        <option selected disabled value="">Choose Service Type
+                                                        <option selected disabled value="">Escoja el tipo de servicio
                                                         </option>
                                                         @foreach ($services as $service)
                                                             <option value="{{ $service->id }}">{{ $service->name }}
@@ -231,13 +231,13 @@
                                         </tbody>
                                     </table>
                                     @if (sizeof($services) == 0)
-                                        <h1 class="text-danger">Please Add service type to be able to save the collection
+                                        <h1 class="text-danger">Por favor agrega un tipo de servicio para guardar la recaudación.
                                         </h1>
                                     @else
                                         <div class="input-group pull-right " style="margin-right:100">
                                             <button id="m-save" type="submit" name="save" value="Submit"
                                                 class="btn btn-warning form-control"><i class='fa fa-save'></i>
-                                                Submit</button>
+                                                Cargar</button>
                                 </form>
                             </div>
                 @endif

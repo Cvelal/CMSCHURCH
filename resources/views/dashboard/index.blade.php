@@ -448,7 +448,7 @@
                                 <span class="pad-ver text-main text-sm text-uppercase text-bold">Total de Donaciones</span>
                                 <p class="text-sm">{{ date('dS F Y', strtotime(NOW())) }}</p>
                                 <p class="text-2x text-main"><span id="due-commission">0</span> </p>
-                                <a href="{{ route('branch.invoice') }}" class="btn btn-block btn-success mar-top">Paga ahora</a>
+                              
                             </div>
                             <hr class="new-section-xs">
 

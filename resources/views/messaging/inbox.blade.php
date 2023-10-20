@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    Communicator - Chat
+    Chat
 @endsection
 
 @section('content')
@@ -12,7 +12,7 @@
             <!--Page Title-->
             <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
             <div id="page-title">
-                <h1 class="page-header text-overflow">Communicator</h1>
+                <h1 class="page-header text-overflow">Comunicador</h1>
             </div>
             <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
             <!--End page title-->
@@ -22,7 +22,7 @@
             <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
             <ol class="breadcrumb">
                 <li>
-                    <i class="fa fa-home"></i><a href="{{ route('dashboard') }}"> Dashboard</a>
+                    <i class="fa fa-home"></i><a href="{{ route('dashboard') }}"> Tablero</a>
                 </li>
                 <li class="active">Chat</li>
             </ol>
@@ -65,8 +65,7 @@
                             <div class="inbox-categories">
                                 <div data-toggle="tab" data-target="#inbox,#welcome-box" class="active"
                                     onclick="clr_msg_box();"> Inbox </div>
-                                <div data-toggle="tab" data-target="#online,#welcome-box" onclick="clr_msg_box();"> Active
-                                    Branches </div>
+                                <div data-toggle="tab" data-target="#online,#welcome-box" onclick="clr_msg_box();"> Ministerios Activos </div>
                                 <!--div data-toggle="tab" data-target="#sent"> Sent </div>
                                     <div data-toggle="tab" data-target="#marked"> Marked </div>
                                     <div data-toggle="tab" data-target="#drafts"> Drafts </div-->
@@ -151,7 +150,7 @@
                                                             </h3>
                                                             <div class="offline-count"> </div>
                                                             <h5>
-                                                                <p class="text-danger">offline</p>
+                                                                <p class="text-danger">Fuera de linea</p>
                                                             </h5>
                                                         </div>
                                                         <!--div class="contacts-add">
@@ -179,12 +178,11 @@
                                                     src="https://bootdey.com/img/Content/avatar/avatar1.png">
 
                                                 <div class="vcentered info-combo">
-                                                    <h3 class="no-margin-bottom name"> Jessica Franco </h3>
-                                                    <h5> Hello, Dennis. I wanted to let you know we reviewed your proposal
-                                                        and decided </h5>
+                                                    <h3 class="no-margin-bottom name"> Nombre </h3>
+                                                    <h5> Hello... </h5>
                                                 </div>
                                                 <div class="contacts-add">
-                                                    <span class="message-time"> 1:44 <sup>AM</sup></span>
+                                                    <span class="message-time"> 5:45 <sup>AM</sup></span>
                                                     <i class="fa fa-trash-o"></i>
                                                     <i class="fa fa-paperclip"></i>
                                                 </div>
@@ -204,11 +202,11 @@
                                                     src="https://bootdey.com/img/Content/avatar/avatar1.png">
 
                                                 <div class="vcentered info-combo">
-                                                    <h3 class="no-margin-bottom name"> Milla Shiffman </h3>
-                                                    <h5> Hello, Mila, can you send me the latest pack of icons, I need </h5>
+                                                    <h3 class="no-margin-bottom name"> Nombre </h3>
+                                                    <h5> Hello... </h5>
                                                 </div>
                                                 <div class="contacts-add">
-                                                    <span class="message-time"> 4:22 <sup>AM</sup></span>
+                                                    <span class="message-time"> 4:20 <sup>AM</sup></span>
                                                     <i class="fa fa-trash-o"></i>
                                                     <i class="fa fa-paperclip"></i>
                                                 </div>
@@ -224,7 +222,7 @@
                                 <div class="message-top bg-primary">
                                     <!--a class="btn btn btn-success new-message"> <i class="fa fa-envelope"></i> New Message </a-->
                                     <div class="">
-                                        <h1 class="text-center text-white">Powered By Hoffenheim Technologies</h1>
+                                        <h1 class="text-center text-white">...</h1>
                                     </div>
                                 </div>
 
@@ -234,7 +232,7 @@
                                             style="display:none;width:69px;height:89px;position:absolute;top:50%;left:50%;padding:2px;">
                                             <img src="{{ URL::asset('images/msg-loader.gif') }}" width="64"
                                                 height="64" />
-                                            <br>Loading..
+                                            <br>Cargando..
                                         </div>
                                     </div>
                                     <!-- conversation end -->
@@ -261,7 +259,7 @@
                                 <div class="message-top bg-primary">
                                     <!--a class="btn btn btn-success new-message"> <i class="fa fa-envelope"></i> New Message </a-->
                                     <div class="">
-                                        <h1 class="text-center text-white">Powered By Hoffenheim Technologies</h1>
+                                        <h1 class="text-center text-white">...</h1>
                                     </div>
                                 </div>
 
@@ -279,12 +277,12 @@
                             <!-- other messages inbox -->
                             <div class="tab-pane message-body" id="activity">
                                 <div class="message-top">
-                                    <a class="btn btn btn-success new-message"> <i class="fa fa-envelope"></i> New Message
+                                    <a class="btn btn btn-success new-message"> <i class="fa fa-envelope"></i> Nuevo mensaje
                                     </a>
 
                                     <div class="new-message-wrapper">
                                         <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Send message to...">
+                                            <input type="text" class="form-control" placeholder="Enviar mensaje a...">
                                             <a class="btn btn-danger close-new-message" href="#"><i
                                                     class="fa fa-times"></i></a>
                                         </div>
@@ -311,13 +309,12 @@
                                             <div class="message-body">
                                                 <div class="message-body-inner">
                                                     <div class="message-info">
-                                                        <h4> Dennis Novac </h4>
+                                                        <h4> ... </h4>
                                                         <h5> <i class="fa fa-clock-o"></i> 2:05 PM </h5>
                                                     </div>
                                                     <hr>
                                                     <div class="message-text">
-                                                        Hi, I've just finished the stickers you wanted. I'll send them to
-                                                        you in an archive in 10 minutes.
+                                                        Hi...
                                                     </div>
                                                 </div>
                                             </div>
@@ -330,13 +327,12 @@
 
                                             <div class="message-body">
                                                 <div class="message-info">
-                                                    <h4> David Beckham </h4>
+                                                    <h4> ... </h4>
                                                     <h5> <i class="fa fa-clock-o"></i> 2:11 PM </h5>
                                                 </div>
                                                 <hr>
                                                 <div class="message-text">
-                                                    Hello, Dennis. Thanks. Also how's it going with our latest football
-                                                    website. Do you need any additional help or information?
+                                                    Hello...
                                                 </div>
                                             </div>
                                             <br>
@@ -366,13 +362,12 @@
                                             <div class="message-body">
                                                 <div class="message-body-inner">
                                                     <div class="message-info">
-                                                        <h4> Dennis Novac </h4>
+                                                        <h4> ... </h4>
                                                         <h5> <i class="fa fa-clock-o"></i> 2:25 PM </h5>
                                                     </div>
                                                     <hr>
                                                     <div class="message-text">
-                                                        It's going well, no need for any other help, thanks. Sure, send me a
-                                                        message when you'll be ready.
+                                                        ...
                                                     </div>
                                                 </div>
                                             </div>

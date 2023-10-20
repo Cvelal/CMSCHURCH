@@ -101,31 +101,28 @@
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
                         <div class="form-group">
-                            <input id="email" type="email" Placeholder="Correo "
-                                class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email"
-                                value="{{ old('email') }}" required autofocus>
+                            <input id="email" type="email" Placeholder="Correo " class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required autofocus>
                             @if ($errors->has('email'))
-                                <span class="invalid-feedback">
-                                    <strong>{{ $errors->first('email') }}</strong>
-                                </span>
+                            <span class="invalid-feedback">
+                                <strong>{{ $errors->first('email') }}</strong>
+                            </span>
                             @endif
                         </div>
                         <div class="form-group">
-                            <input id="password" type="password" Placeholder="Contraseña"
-                                class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password"
-                                required>
+                            <input id="password" type="password" Placeholder="Contraseña" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
 
                             @if ($errors->has('password'))
-                                <span class="invalid-feedback">
-                                    <strong>{{ $errors->first('password') }}</strong>
-                                </span>
+                            <span class="invalid-feedback">
+                                <strong>{{ $errors->first('password') }}</strong>
+                            </span>
                             @endif
                         </div>
                         <div class="checkbox pad-btm text-left">
-                            <input id="demo-form-checkbox" class="magic-checkbox" type="checkbox" name="remember"
-                                {{ old('remember') ? 'checked' : '' }}>
+                            <input id="demo-form-checkbox" class="magic-checkbox" type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}>
                             <label class="font-weight-bold" for="demo-form-checkbox" style="">Recuerdame</label>
                         </div>
+                        <div class="g-recaptcha" data-sitekey="6Ld4RWQoAAAAAPIJt516JM4ERInMCss7b7TqGsTM"></div>
+                        <br />
                         <button class="btn btn-primary btn-lg btn-block" type="submit">Acceder</button>
                     </form>
 
@@ -190,8 +187,9 @@
     <!--NiftyJS [ RECOMMENDED ]-->
     <script src="{{ URL::asset('js/nifty.min.js') }}"></script>
 
+    <!--API Recaptcha v2-->
 
-
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
     <!--=================================================-->
 
